@@ -107,11 +107,18 @@
         font-size: 13px;
         font-weight: 700;
         line-height: 1;
-        color: var(--accent);
+        color: #ffffff;
         border: 1.5px solid var(--accent);
         border-radius: 999px;
-        background: var(--surface);
+        background: var(--accent);
         white-space: nowrap;
+      }
+      @media (prefers-color-scheme: dark) {
+        .topnav-home {
+          background: #1e6b38;
+          border-color: #1e6b38;
+          color: #ffffff;
+        }
       }
       @media (max-width: 560px) {
         .topnav-inner { padding: 0 4px; gap: 0; }
