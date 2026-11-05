@@ -65,12 +65,27 @@
         margin: 0 auto; max-width: 42rem; display: flex; padding: 0 6px;
       }
       nav.topnav button {
-        flex: 1; min-height: 44px; display: flex; align-items: center; justify-content: center;
+        flex: 1; min-width: 0; min-height: 44px; display: flex; align-items: center; justify-content: center;
         white-space: nowrap; padding: 0 4px; font-size: 14px; font-weight: 600;
         background: none; border: none; cursor: pointer; font-family: inherit;
         color: var(--dim); border-bottom: 2.5px solid transparent;
       }
       nav.topnav button.active { color: var(--accent); border-bottom-color: var(--accent); }
+      nav.topnav .brand {
+        flex-shrink: 0; display: flex; align-items: center;
+        white-space: nowrap; padding: 0 8px 0 4px; font-size: 14px; font-weight: 700;
+        color: var(--text);
+      }
+      nav.topnav a.home-link {
+        flex-shrink: 0; min-height: 44px; display: flex; align-items: center; justify-content: center;
+        white-space: nowrap; padding: 0 6px 0 8px; font-size: 14px; font-weight: 600;
+        color: var(--accent); text-decoration: none;
+      }
+      @media (max-width: 560px) {
+        nav.topnav .brand { font-size: 12px; padding: 0 4px 0 2px; }
+        nav.topnav button { font-size: 12.5px; padding: 0 2px; }
+        nav.topnav a.home-link { font-size: 12.5px; padding: 0 2px 0 4px; }
+      }
 
       main { margin: 0 auto; max-width: 42rem; padding: 0 16px 48px; }
 
@@ -220,11 +235,13 @@
   <body>
     <nav class="topnav" aria-label="內容導航">
       <div class="inner">
+        <span class="brand">駿美一生關注組</span>
         <button type="button" data-target="sec-deployment">出賽部署</button>
         <button type="button" data-target="sec-fastwork">快操趨勢</button>
         <button type="button" data-target="sec-races">賽績</button>
         <button type="button" data-target="sec-trials">試閘</button>
         <button type="button" data-target="sec-health">健康紀錄</button>
+        <a class="home-link" href="index.html">首頁</a>
       </div>
     </nav>
 
