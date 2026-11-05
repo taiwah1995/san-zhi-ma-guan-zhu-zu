@@ -74,13 +74,16 @@
       }
       .topnav button.active { color: var(--accent); border-bottom-color: var(--accent); }
       .topnav-home {
-        flex: 0 0 auto; min-height: 44px; display: flex; align-items: center; justify-content: center;
-        white-space: nowrap; padding: 0 2px 0 8px; font-size: 14px; font-weight: 600;
-        color: var(--accent); text-decoration: none; border-bottom: 2.5px solid transparent;
+        flex: 0 0 auto; align-self: center; display: flex; align-items: center; justify-content: center;
+        white-space: nowrap; margin-left: 6px; padding: 7px 14px; font-size: 14px; font-weight: 700;
+        background: var(--accent); color: #fff; text-decoration: none; border-radius: 999px;
       }
       @media (max-width: 560px) {
         .topnav button { font-size: 12px; padding: 0 2px; }
-        .topnav-home { font-size: 12px; padding: 0 0 0 4px; }
+        .topnav-home { font-size: 12px; margin-left: 4px; padding: 6px 12px; }
+      }
+      @media (prefers-color-scheme: dark) {
+        .topnav-home { background: #1e6b3c; }
       }
 
       main { margin: 0 auto; width: 100%; max-width: 42rem; padding: 0 16px 48px; }
