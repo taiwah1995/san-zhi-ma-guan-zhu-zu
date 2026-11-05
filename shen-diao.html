@@ -65,14 +65,29 @@
         padding-top: env(safe-area-inset-top, 0px);
         box-shadow: 0 1px 6px rgba(0,0,0,0.06);
       }
-      .topnav-inner { margin: 0 auto; display: flex; width: 100%; max-width: 42rem; padding: 0 6px; }
+      .topnav-inner { margin: 0 auto; display: flex; flex-wrap: wrap; align-items: stretch; width: 100%; max-width: 42rem; padding: 0 6px; }
       .topnav button {
-        flex: 1; min-height: 44px; display: flex; align-items: center; justify-content: center;
+        flex: 1 1 auto; min-height: 44px; display: flex; align-items: center; justify-content: center;
         white-space: nowrap; padding: 0 4px; font-size: 14px; font-weight: 600;
         background: none; border: none; cursor: pointer; font-family: inherit;
         color: var(--dim); border-bottom: 2.5px solid transparent;
       }
       .topnav button.active { color: var(--accent); border-bottom-color: var(--accent); }
+      .topnav-name {
+        flex: 0 0 auto; min-height: 44px; display: flex; align-items: center;
+        white-space: nowrap; padding: 0 8px 0 2px; font-size: 14px; font-weight: 700;
+        color: var(--text); border-bottom: 2.5px solid transparent;
+      }
+      .topnav-home {
+        flex: 0 0 auto; min-height: 44px; display: flex; align-items: center; justify-content: center;
+        white-space: nowrap; padding: 0 2px 0 8px; font-size: 14px; font-weight: 600;
+        color: var(--accent); text-decoration: none; border-bottom: 2.5px solid transparent;
+      }
+      @media (max-width: 560px) {
+        .topnav button { font-size: 12px; padding: 0 2px; }
+        .topnav-name { font-size: 12px; padding: 0 4px 0 0; }
+        .topnav-home { font-size: 12px; padding: 0 0 0 4px; }
+      }
 
       main { margin: 0 auto; width: 100%; max-width: 42rem; padding: 0 16px 48px; }
 
@@ -108,11 +123,13 @@
   <body>
     <nav class="topnav" aria-label="內容導航">
       <div class="topnav-inner">
+        <span class="topnav-name">神鵰關注組</span>
         <button type="button" data-target="sec-deployment">出賽部署</button>
         <button type="button" data-target="sec-fastwork">快操趨勢</button>
         <button type="button" data-target="sec-races">賽績</button>
         <button type="button" data-target="sec-trials">試閘</button>
         <button type="button" data-target="sec-health">健康紀錄</button>
+        <a class="topnav-home" href="index.html">首頁</a>
       </div>
     </nav>
 
