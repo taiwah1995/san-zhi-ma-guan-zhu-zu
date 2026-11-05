@@ -73,11 +73,6 @@
         color: var(--dim); border-bottom: 2.5px solid transparent;
       }
       .topnav button.active { color: var(--accent); border-bottom-color: var(--accent); }
-      .topnav-name {
-        flex: 0 0 auto; min-height: 44px; display: flex; align-items: center;
-        white-space: nowrap; padding: 0 8px 0 2px; font-size: 14px; font-weight: 700;
-        color: var(--text); border-bottom: 2.5px solid transparent;
-      }
       .topnav-home {
         flex: 0 0 auto; min-height: 44px; display: flex; align-items: center; justify-content: center;
         white-space: nowrap; padding: 0 2px 0 8px; font-size: 14px; font-weight: 600;
@@ -85,7 +80,6 @@
       }
       @media (max-width: 560px) {
         .topnav button { font-size: 12px; padding: 0 2px; }
-        .topnav-name { font-size: 12px; padding: 0 4px 0 0; }
         .topnav-home { font-size: 12px; padding: 0 0 0 4px; }
       }
 
@@ -123,7 +117,6 @@
   <body>
     <nav class="topnav" aria-label="內容導航">
       <div class="topnav-inner">
-        <span class="topnav-name">神鵰關注組</span>
         <button type="button" data-target="sec-deployment">出賽部署</button>
         <button type="button" data-target="sec-fastwork">快操趨勢</button>
         <button type="button" data-target="sec-races">賽績</button>
