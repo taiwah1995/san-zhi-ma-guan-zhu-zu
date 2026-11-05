@@ -73,9 +73,50 @@
       .topnav-inner {
         margin: 0 auto;
         display: flex;
+        align-items: center;
         width: 100%;
         max-width: 672px;
         padding: 0 6px;
+        gap: 2px;
+      }
+      .topnav-brand {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 0 6px 0 4px;
+        font-size: 14px;
+        font-weight: 800;
+        color: var(--text);
+        white-space: nowrap;
+        letter-spacing: 0.02em;
+      }
+      .topnav-tabs {
+        display: flex;
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+      .topnav-home {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 32px;
+        padding: 4px 10px;
+        margin-left: 4px;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1;
+        color: var(--accent);
+        border: 1.5px solid var(--accent);
+        border-radius: 999px;
+        background: var(--surface);
+        white-space: nowrap;
+      }
+      @media (max-width: 560px) {
+        .topnav-inner { padding: 0 4px; gap: 0; }
+        .topnav-brand { font-size: 12px; padding: 0 4px 0 2px; }
+        .topnav-home { font-size: 12px; padding: 3px 7px; margin-left: 2px; }
       }
       .topnav button {
         flex: 1;
@@ -97,6 +138,9 @@
       .topnav button.active {
         color: var(--accent);
         border-bottom-color: var(--accent);
+      }
+      @media (max-width: 560px) {
+        .topnav button { font-size: 12px; padding: 0 1px; min-width: 0; }
       }
 
       main {
@@ -374,7 +418,11 @@
   </head>
   <body>
     <nav class="topnav" aria-label="內容導航">
-      <div class="topnav-inner" id="topnav"></div>
+      <div class="topnav-inner">
+        <span class="topnav-brand font-display">贏得爽關注組</span>
+        <div class="topnav-tabs" id="topnav"></div>
+        <a class="topnav-home" href="index.html">首頁</a>
+      </div>
     </nav>
 
     <main>
