@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="zh-Hant-HK">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>三隻馬關注組</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #f4f6f3;
+        --surface: #ffffff;
+        --ink: #17251c;
+        --ink-soft: #4c5a50;
+        --line: #d9e0d8;
+        --green: #14532d;
+        --green-deep: #0c3a20;
+        --gold: #b98a1e;
+        --gold-soft: #f3e8c8;
+        --shadow: 0 10px 28px rgba(12, 58, 32, 0.10);
+        --shadow-hover: 0 16px 36px rgba(12, 58, 32, 0.18);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #10160f;
+          --surface: #1a221a;
+          --ink: #eef2ec;
+          --ink-soft: #a9b6a9;
+          --line: #2e3a2e;
+          --green: #7fc48f;
+          --green-deep: #0f2416;
+          --gold: #e0b64a;
+          --gold-soft: #2e2a16;
+          --shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+          --shadow-hover: 0 16px 36px rgba(0, 0, 0, 0.6);
+        }
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Noto Sans TC", "PingFang HK", "Microsoft JhengHei", system-ui, sans-serif;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap {
+        max-width: 1020px;
+        margin: 0 auto;
+        padding: 40px 20px 56px;
+      }
+      header { text-align: center; margin-bottom: 34px; }
+      header h1 {
+        font-family: "Noto Serif TC", "Noto Sans TC", serif;
+        font-weight: 900;
+        font-size: clamp(30px, 6vw, 44px);
+        letter-spacing: 0.04em;
+        margin: 0 0 10px;
+        color: var(--ink);
+      }
+      header h1 .mark { color: var(--gold); }
+      header p {
+        margin: 0;
+        color: var(--ink-soft);
+        font-size: 15px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      a.horse {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        text-decoration: none;
+        color: var(--ink);
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-top: 6px solid var(--green);
+        border-radius: 14px;
+        padding: 30px 20px 26px;
+        box-shadow: var(--shadow);
+        transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+      }
+      a.horse:hover, a.horse:focus-visible {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-hover);
+        outline: none;
+      }
+      a.horse:active { transform: translateY(-1px); }
+      .horse-icon {
+        font-size: 56px;
+        line-height: 1;
+        margin-bottom: 14px;
+      }
+      .horse-name {
+        font-family: "Noto Serif TC", "Noto Sans TC", serif;
+        font-size: 27px;
+        font-weight: 900;
+        letter-spacing: 0.03em;
+        margin: 0 0 4px;
+      }
+      .horse-brand {
+        display: inline-block;
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 0.14em;
+        color: var(--green-deep);
+        background: var(--gold-soft);
+        border: 1px solid var(--gold);
+        border-radius: 999px;
+        padding: 2px 12px;
+        margin-bottom: 16px;
+      }
+      @media (prefers-color-scheme: dark) {
+        .horse-brand { color: var(--gold); }
+      }
+      .horse-meta {
+        width: 100%;
+        border-top: 1px dashed var(--line);
+        padding-top: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-size: 15px;
+        color: var(--ink-soft);
+      }
+      .horse-meta b { color: var(--ink); font-weight: 700; }
+      .horse-meta .rating b { font-size: 20px; color: var(--green); }
+      @media (prefers-color-scheme: dark) {
+        .horse-meta .rating b { color: var(--green); }
+      }
+      .go {
+        margin-top: 18px;
+        font-weight: 700;
+        font-size: 14px;
+        color: var(--green);
+        letter-spacing: 0.06em;
+      }
+      .note {
+        margin-top: 28px;
+        text-align: center;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 16px 20px;
+        font-size: 16px;
+        font-weight: 700;
+      }
+      .note span { color: var(--ink-soft); font-weight: 400; font-size: 14px; display: block; margin-top: 4px; }
+      footer {
+        margin-top: 22px;
+        text-align: center;
+        color: var(--ink-soft);
+        font-size: 13px;
+      }
+      @media (max-width: 720px) {
+        .wrap { padding: 30px 16px 44px; }
+        .grid { grid-template-columns: 1fr; gap: 14px; }
+        a.horse { padding: 24px 18px 22px; }
+        .horse-icon { font-size: 48px; }
+        .horse-name { font-size: 25px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        a.horse { transition: none; }
+        a.horse:hover { transform: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <header>
+        <h1>三隻馬<span class="mark">關注組</span></h1>
+        <p>撳入去睇每隻馬嘅公開頁 —— 操練、賽績、試閘同獸醫紀錄，資料跟進。</p>
+      </header>
+
+      <div class="grid">
+        <a class="horse" href="shen-diao.html" target="_blank" rel="noopener">
+          <div class="horse-icon" aria-hidden="true">🐴</div>
+          <h2 class="horse-name">神鵰</h2>
+          <span class="horse-brand">烙號 L336</span>
+          <div class="horse-meta">
+            <div>練馬師：<b>甘敏斯</b></div>
+            <div class="rating">評分（2026-11-05）：<b>75</b></div>
+          </div>
+          <div class="go">入內頁睇詳情 ↗</div>
+        </a>
+
+        <a class="horse" href="jun-mei-yi-sheng.html" target="_blank" rel="noopener">
+          <div class="horse-icon" aria-hidden="true">🐴</div>
+          <h2 class="horse-name">駿美一生</h2>
+          <span class="horse-brand">烙號 L085</span>
+          <div class="horse-meta">
+            <div>練馬師：<b>葉楚航</b></div>
+            <div class="rating">評分（2026-11-05）：<b>36</b></div>
+          </div>
+          <div class="go">入內頁睇詳情 ↗</div>
+        </a>
+
+        <a class="horse" href="ying-de-shuang.html" target="_blank" rel="noopener">
+          <div class="horse-icon" aria-hidden="true">🐴</div>
+          <h2 class="horse-name">贏得爽</h2>
+          <span class="horse-brand">烙號 K211</span>
+          <div class="horse-meta">
+            <div>練馬師：<b>文家良</b></div>
+            <div class="rating">評分（2026-11-05）：<b>29</b></div>
+          </div>
+          <div class="go">入內頁睇詳情 ↗</div>
+        </a>
+      </div>
+
+      <div class="note">
+        最新每日判斷請入內頁睇
+        <span>內頁為公開版，內容每日約 14:35 同步，連結不變。</span>
+      </div>
+
+      <footer>三隻馬關注組 · 資料跟進</footer>
+    </main>
+  </body>
+</html>
