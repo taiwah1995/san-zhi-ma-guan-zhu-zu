@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="zh-Hant-HK">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>🐴 M274關注組</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f5f1e6;
+        --surface: #fffdf6;
+        --surface-2: #efe9d8;
+        --text: #1c1917;
+        --dim: #6f6a5c;
+        --border: #ddd5bf;
+        --accent: #14532d;
+        --accent-soft: #e2ecdf;
+        --chestnut: #b45309;
+        --alert: #b91c1c;
+        --alert-soft: #fbe9e7;
+        --radius: 10px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #131510;
+          --surface: #1d2019;
+          --surface-2: #262a20;
+          --text: #f2efe4;
+          --dim: #a3a08f;
+          --border: #3a3e30;
+          --accent: #8fce9f;
+          --accent-soft: #243528;
+          --chestnut: #e09a4e;
+          --alert: #f08a7d;
+          --alert-soft: #3d2320;
+        }
+      }
+      * { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+        font-size: 16px;
+        line-height: 1.55;
+      }
+      .font-display { font-family: "Noto Serif TC", "Songti TC", "PMingLiU", serif; }
+      .tnum { font-variant-numeric: tabular-nums; }
+      a { color: var(--accent); }
+
+      nav.topnav {
+        position: sticky; top: 0; z-index: 40;
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        padding-top: env(safe-area-inset-top, 0px);
+        box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+      }
+      nav.topnav .inner {
+        margin: 0 auto; max-width: 42rem; display: flex; padding: 0 6px;
+      }
+      nav.topnav button {
+        flex: 1; min-width: 0; min-height: 44px; display: flex; align-items: center; justify-content: center;
+        white-space: nowrap; padding: 0 4px; font-size: 14px; font-weight: 600;
+        background: none; border: none; cursor: pointer; font-family: inherit;
+        color: var(--dim); border-bottom: 2.5px solid transparent;
+      }
+      nav.topnav button.active { color: var(--accent); border-bottom-color: var(--accent); }
+      nav.topnav .brand {
+        flex-shrink: 0; display: flex; align-items: center;
+        white-space: nowrap; padding: 0 8px 0 4px; font-size: 14px; font-weight: 700;
+        color: var(--text);
+      }
+      nav.topnav a.home-link {
+        flex-shrink: 0; align-self: center; min-height: 32px; display: flex; align-items: center; justify-content: center;
+        white-space: nowrap; padding: 4px 14px; margin-left: 6px; font-size: 14px; font-weight: 700;
+        background: var(--accent); color: #fff; text-decoration: none; border-radius: 999px;
+      }
+      @media (prefers-color-scheme: dark) {
+        nav.topnav a.home-link { background: #2e7d46; color: #fff; }
+      }
+      @media (max-width: 560px) {
+        nav.topnav .brand { font-size: 12px; padding: 0 4px 0 2px; }
+        nav.topnav button { font-size: 12.5px; padding: 0 2px; }
+        nav.topnav a.home-link { font-size: 12.5px; padding: 3px 11px; margin-left: 4px; }
+      }
+
+      main { margin: 0 auto; max-width: 42rem; padding: 0 16px 48px; }
+
+      header.identity { padding-top: 20px; }
+      header.identity h1 { margin: 0; font-size: 30px; font-weight: 900; line-height: 1.25; }
+      header.identity h1 .code { font-size: 20px; font-weight: 700; color: var(--chestnut); }
+      header.identity p { margin: 2px 0 0; font-size: 14px; letter-spacing: .04em; color: var(--dim); }
+      .pubnote { margin-top: 8px; font-size: 12px; color: var(--dim); }
+
+      figure.photo { margin: 16px 0 0; }
+      figure.photo img { width: 100%; display: block; border-radius: var(--radius); border: 1px solid var(--border); }
+      figure.photo figcaption {
+        margin-top: 6px; display: flex; flex-wrap: wrap; align-items: baseline;
+        justify-content: space-between; gap: 8px; font-size: 12px; color: var(--dim);
+      }
+      figure.photo figcaption a { font-weight: 600; text-decoration: none; }
+      .photo-placeholder {
+        margin: 16px 0 0; padding: 20px 16px; text-align: center;
+        background: var(--surface-2); border: 1px dashed var(--border); border-radius: var(--radius);
+      }
+      .photo-placeholder .big { margin: 0; font-size: 16px; font-weight: 700; }
+      .photo-placeholder .small { margin: 6px 0 0; font-size: 13px; line-height: 1.7; color: var(--dim); }
+      .photo-placeholder a { font-weight: 600; }
+
+      .card {
+        background: var(--surface); border: 1px solid var(--border);
+        border-radius: var(--radius); padding: 16px;
+      }
+      .card.mt { margin-top: 12px; }
+
+      dl.rows { margin: 0; }
+      dl.rows > div {
+        display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+        padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px;
+      }
+      dl.rows > div:first-child { padding-top: 2px; }
+      dl.rows > div:last-child { border-bottom: none; padding-bottom: 2px; }
+      dl.rows dt { flex-shrink: 0; color: var(--dim); }
+      dl.rows dd { margin: 0; text-align: right; line-height: 1.6; }
+      dl.rows dd.strong { font-weight: 600; }
+
+      .section-title { margin: 36px 0 12px; scroll-margin-top: 76px; }
+      .section-title h2 { margin: 0; font-size: 20px; font-weight: 700; color: var(--accent); }
+      .section-title h2.plain { color: var(--text); }
+      .section-title p { margin: 2px 0 0; font-size: 14px; color: var(--dim); }
+      .section-title .rule { margin-top: 8px; height: 1px; background: var(--border); }
+
+      /* Daily verdict */
+      .verdict-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+      .verdict-head .kicker { font-size: 12px; font-weight: 600; letter-spacing: .12em; color: var(--dim); margin: 0; }
+      .verdict-word { margin: 4px 0 0; font-size: 48px; font-weight: 900; line-height: 1; color: var(--chestnut); }
+      .rating-box { text-align: right; }
+      .rating-box .lbl { font-size: 12px; color: var(--dim); margin: 0; }
+      .rating-box .num { margin: 0; font-size: 30px; font-weight: 900; line-height: 1.15; }
+      .rating-box .wt { margin: 4px 0 0; font-size: 12px; color: var(--dim); }
+      .rating-box .wt b { color: var(--text); }
+      .phrase-row { margin: 16px 0 0; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+      .phrase-row .lbl { flex-shrink: 0; font-size: 14px; color: var(--dim); }
+      .phrase-row .phrase { text-align: right; font-size: 16px; font-weight: 700; color: var(--chestnut); }
+      dl.proof { margin: 16px 0 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+      dl.proof > div {
+        display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+        padding: 10px 0; font-size: 14px;
+      }
+      dl.proof > div + div { border-top: 1px solid var(--border); }
+      dl.proof dt { flex-shrink: 0; color: var(--dim); }
+      dl.proof dd { margin: 0; text-align: right; font-weight: 600; }
+      .summary { margin: 16px 0 0; font-size: 14px; line-height: 1.75; }
+      .sourcenote { margin: 12px 0 0; font-size: 12px; line-height: 1.7; color: var(--dim); }
+
+      /* Deployment banner */
+      .deploy-banner { background: var(--accent); border-radius: var(--radius); color: #f5f7f2; padding: 20px; }
+      .deploy-banner h3 { margin: 0; font-size: 24px; font-weight: 900; line-height: 1.4; }
+      .deploy-banner .where { margin: 4px 0 0; font-size: 14px; opacity: .9; }
+      .deploy-banner .body { margin: 12px 0 0; font-size: 14px; line-height: 1.75; opacity: .95; }
+      .deploy-view h3 { margin: 0; font-size: 18px; font-weight: 700; }
+      .deploy-view p { margin: 8px 0 0; font-size: 14px; line-height: 1.75; }
+      .deploy-view p.dim { color: var(--dim); }
+
+      /* Fast work */
+      .fw-list { margin: 12px 0 0; padding: 0; list-style: none; }
+      .fw-list li { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; font-size: 14px; padding: 3px 0; }
+      .fw-list .d { color: var(--dim); }
+      .fw-list .s { font-weight: 700; white-space: nowrap; }
+      .fw-list .n { flex: 1; text-align: right; font-size: 12px; color: var(--dim); }
+      .fw-note { margin: 12px 0 0; font-size: 12px; line-height: 1.7; color: var(--dim); }
+      figure.chart { margin: 0; }
+      figure.chart figcaption { margin-top: 4px; font-size: 12px; line-height: 1.7; color: var(--dim); }
+
+      /* Races & trials */
+      ul.rows-list { margin: 4px 0 0; padding: 0; list-style: none; }
+      ul.rows-list > li { padding: 12px 0; border-bottom: 1px solid var(--border); }
+      ul.rows-list > li:last-child { border-bottom: none; }
+      .row-flex { display: flex; align-items: flex-start; gap: 12px; }
+      .place-circle {
+        flex-shrink: 0; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
+        font-size: 18px; font-weight: 900; border: 2px solid var(--border); color: var(--dim); border-radius: 50%;
+      }
+      .row-main { min-width: 0; flex: 1; }
+      .row-main .line1 { margin: 0; font-size: 14px; font-weight: 600; }
+      .row-main .line1 .light, .row-main .sub { color: var(--dim); }
+      .row-main .sub { margin: 2px 0 0; font-size: 14px; }
+      .row-main .body { margin: 2px 0 0; font-size: 14px; }
+      .row-main .note { margin: 4px 0 0; font-size: 14px; line-height: 1.7; color: var(--dim); }
+      .row-main .comment { margin: 4px 0 0; font-size: 14px; font-weight: 600; color: var(--accent); }
+      a.video-link, .video-chip {
+        display: inline-block; margin-top: 8px; padding: 6px 12px; font-size: 12px; font-weight: 600;
+        border: 1px solid var(--border); border-radius: 999px; background: var(--surface);
+        color: var(--accent); text-decoration: none;
+      }
+      .video-chips { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+      .video-chips .video-chip { margin-top: 0; padding: 4px 10px; }
+      .trial-summary { margin: 8px 0 0; font-size: 14px; line-height: 1.75; }
+      .fine-note { margin: 8px 0 0; font-size: 12px; line-height: 1.7; color: var(--dim); }
+
+      /* Health links */
+      .link-row { margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px; }
+      .link-row a {
+        padding: 8px 12px; font-weight: 600; text-decoration: none;
+        border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface);
+      }
+      .health-text { margin: 8px 0 0; font-size: 14px; line-height: 1.75; }
+
+      /* Daily history */
+      ul.daily-list { margin: 4px 0 0; padding: 0; list-style: none; }
+      ul.daily-list > li { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+      ul.daily-list > li:last-child { border-bottom: none; }
+      .verdict-badge {
+        flex-shrink: 0; padding: 2px 8px; font-size: 14px; font-weight: 900;
+        border: 1.5px solid var(--chestnut); color: var(--chestnut); border-radius: 6px;
+      }
+      .daily-main { min-width: 0; font-size: 14px; }
+      .daily-main .d1 { margin: 0; font-weight: 600; }
+      .daily-main .d1 .light { font-weight: 400; color: var(--dim); }
+      .daily-more { margin-top: 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+      .daily-more .count { font-size: 12px; color: var(--dim); margin: 0; }
+      .btn {
+        flex-shrink: 0; padding: 8px 14px; font-size: 14px; font-weight: 600; cursor: pointer;
+        border: 1.5px solid var(--accent); color: var(--accent); border-radius: var(--radius);
+        background: var(--surface); font-family: inherit;
+      }
+      .btn.ghost { border-color: var(--border); color: var(--dim); }
+
+      /* Profile */
+      dl.profile-grid { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; font-size: 14px; }
+      dl.profile-grid dt { color: var(--dim); }
+      dl.profile-grid dd { margin: 2px 0 0; font-weight: 600; line-height: 1.6; }
+      dl.profile-grid dd .subnote { display: block; font-size: 12px; font-weight: 400; color: var(--dim); }
+
+      footer.page-foot { margin-top: 40px; border-top: 1px solid var(--border); padding-top: 16px; font-size: 12px; line-height: 1.7; color: var(--dim); }
+      footer.page-foot p { margin: 0; }
+    </style>
+  </head>
+  <body>
+    <nav class="topnav" aria-label="內容導航">
+      <div class="inner">
+        <button type="button" data-target="sec-deployment">部署</button>
+        <button type="button" data-target="sec-fastwork">趨勢</button>
+        <button type="button" data-target="sec-races">賽績</button>
+        <button type="button" data-target="sec-trials">試閘</button>
+        <button type="button" data-target="sec-market">熱度</button>
+        <button type="button" data-target="sec-health">健康</button>
+        <a class="home-link" href="index.html">首頁</a>
+      </div>
+    </nav>
+
+    <main>
+      <header class="identity">
+        <h1 class="font-display">🐴 M274關注組 <span class="code tnum">M274</span></h1>
+        <p>未命名 · 大衛希斯馬房</p>
+        <p class="pubnote">資料截至 2026年11月6日（基線核實日）</p>
+      </header>
+
+      <div class="photo-placeholder" role="note" aria-label="馬相待核實">
+        <p class="big">馬相待核實</p>
+        <p class="small">馬會官方馬匹相片尚未發佈（官方圖連結全部 404），所以呢度唔放任何代替相片。馬匹資料可以去 <a href="https://racing.hkjc.com/zh-hk/local/information/horse?horseid=HK_2026_M274" target="_blank" rel="noreferrer">馬會馬匹資料頁 ↗</a> 睇返。</p>
+      </div>
+
+      <!-- 在港戰績 -->
+      <section class="card mt" aria-label="在港戰績">
+        <dl class="rows">
+          <div>
+            <dt>在港戰績</dt>
+            <dd class="strong">0戰 0冠 0亞 0季</dd>
+          </div>
+          <div>
+            <dt>跑法</dt>
+            <dd>未核實 — 未在港出賽，馬會頁無走位資料，唔會估。</dd>
+          </div>
+          <div>
+            <dt>配備</dt>
+            <dd>未有紀錄 — 賽事未出賽，晨操配備欄每課都空白。</dd>
+          </div>
+          <div>
+            <dt>部署睇法</dt>
+            <dd>10月18日先到港，而家只係操練初段：馬會晨操紀錄得 5 課，全部係踱步，未有快操、未試閘、未有評分。現階段無嘢可以研判，部署就係等佢操起、試第一課閘，先有第一個真訊號。</dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- 每日判斷 -->
+      <section class="card" style="margin-top:20px; padding:20px;" aria-label="每日判斷">
+        <div class="verdict-head">
+          <div>
+            <p class="kicker">每日判斷 · 星期五 11月6日</p>
+            <p class="verdict-word font-display">持平</p>
+          </div>
+          <div class="rating-box">
+            <p class="lbl">評分</p>
+            <p class="num font-display">未有</p>
+            <p class="wt">體重 <b>未公佈</b></p>
+          </div>
+        </div>
+        <p class="phrase-row">
+          <span class="lbl">每日評價</span>
+          <span class="phrase font-display">操練初起，靜候試閘</span>
+        </p>
+        <dl class="proof">
+          <div>
+            <dt>最後操練</dt>
+            <dd>星期五 11月6日 · 踱步（沙田飛機場）</dd>
+          </div>
+          <div>
+            <dt>上次快操</dt>
+            <dd>無紀錄</dd>
+          </div>
+          <div>
+            <dt>有無斷操</dt>
+            <dd>未核實（11月2日之前無晨操紀錄，唔推斷）</dd>
+          </div>
+        </dl>
+        <p class="summary">M274 係澳洲 3 歲棗／棕色閹馬，自購馬，10月18日到港，現時在香港，大衛希斯訓練。基線好簡單：未命名、未出賽、未有評分（馬會頁現時同季初評分都係空白，唔係 0 分）、體重未公佈。晨操只得 5 課（11月2日至6日），全部沙田踱步 — 6日喺沙田飛機場踱步，之前四日係馬匹跑步機踱步；無快操、無試閘、無報名。樣本咁少，判斷只能係持平，等第一課快操同第一課試閘出現，先有得再評。</p>
+        <p class="sourcenote">基線：2026-11-06 核實馬會馬匹頁、晨操紀錄同傷患紀錄子頁。評分空白、獎金 $0、操練 5 課全部對返馬會紀錄；來港前賽績馬會頁無列出，跑法同體重未有公開資料，唔估。</p>
+      </section>
+
+      <!-- 出賽部署 -->
+      <div class="section-title" id="sec-deployment">
+        <h2>🎯 出賽部署</h2>
+        <p>未有報名 — 到港未夠三星期，仍在操練初段</p>
+        <div class="rule"></div>
+      </div>
+      <section class="deploy-banner" aria-label="出賽部署狀態">
+        <h3 class="font-display">未有報名 — 下一場未定</h3>
+        <p class="where">大衛希斯馬房 · 現時位置：香港（2026-10-18 到達）</p>
+        <p class="body">截至 2026年11月6日，馬會報名表無 M274 嘅名字（2026-11-06 核實）。佢未試閘、未有快操、未有評分，出賽部署根本未開始 — 第一步係操起狀態、試第一課閘，之後先談得上報名。</p>
+      </section>
+      <section class="card mt deploy-view" aria-label="部署睇法">
+        <h3 class="font-display">部署睇法</h3>
+        <p>先睇操練點樣升級：而家每日只係踱步（飛機場或跑步機），幾時出現第一課快操、第一課試閘，就係部署開始郁嘅訊號。每日下午 2:25 嘅更新會查晨操、試閘同報名，一有核實變化就會寫入嚟。</p>
+        <p class="dim">背景數字：2026年10月18日進口到港，在港 0 戰，獎金 $0，評分未有。來源：<a href="https://racing.hkjc.com/zh-hk/local/information/horse?horseid=HK_2026_M274" target="_blank" rel="noreferrer">馬會馬匹資料頁 ↗</a>（2026-11-06 核實）。</p>
+      </section>
+
+      <!-- 快操趨勢 -->
+      <div class="section-title" id="sec-fastwork">
+        <h2>⏱️ 快操趨勢</h2>
+        <p>未有快操 — 晨操只得 5 課踱步，趨勢建立唔到</p>
+        <div class="rule"></div>
+      </div>
+      <section class="card" aria-label="快操趨勢">
+        <ul class="fw-list">
+          <li><span class="d tnum">11月6日</span><span class="s">踱步</span><span class="n">沙田飛機場 · 最後操練</span></li>
+          <li><span class="d tnum">11月5日</span><span class="s">踱步</span><span class="n">沙田 · 馬匹跑步機</span></li>
+          <li><span class="d tnum">11月4日</span><span class="s">踱步</span><span class="n">沙田 · 馬匹跑步機</span></li>
+          <li><span class="d tnum">11月3日</span><span class="s">踱步</span><span class="n">沙田 · 馬匹跑步機</span></li>
+          <li><span class="d tnum">11月2日</span><span class="s">踱步</span><span class="n">沙田 · 馬匹跑步機 · 紀錄中最早一課</span></li>
+        </ul>
+        <p class="fw-note">操練背景：馬會晨操紀錄只去到 11月2日，之前（包括 10月18日到港後嗰兩星期）無任何晨操紀錄 — 係無紀錄，唔等於斷操，唔會推斷。5 課全部係踱步，無一課快操，所以無時間、無分段，快操趨勢圖無數據可畫；第一課快操出現嗰日，先開始建立趨勢。</p>
+      </section>
+
+      <!-- 賽績 -->
+      <div class="section-title" id="sec-races">
+        <h2>🧾 賽績</h2>
+        <p>在港未出賽 · 來港前賽績馬會頁無列出</p>
+        <div class="rule"></div>
+      </div>
+      <section class="card" aria-label="賽績">
+        <p class="health-text">在港戰績 0戰 0冠 0亞 0季，獎金 $0 — 佢未喺香港出過賽，所以無名次、無走位、無重播可以列。來港前賽績方面，馬會馬匹頁無列出任何海外賽事，呢度照實寫無列出，唔會自己補。</p>
+        <p class="fine-note">賽績對返馬會馬匹資料頁（2026-11-06 核實）。</p>
+      </section>
+
+      <!-- 試閘 -->
+      <div class="section-title" id="sec-trials">
+        <h2>📈 試閘</h2>
+        <p>暫無紀錄 — 未試過閘</p>
+        <div class="rule"></div>
+      </div>
+      <section class="card" aria-label="試閘">
+        <p class="health-text">截至 2026年11月6日，M274 無任何試閘紀錄（已查 10月20日至11月5日全部試閘結果頁都無佢出現；11月6日試閘未核實）。第一課試閘會係佢到港後第一個公開考驗，到時先有走勢同評述可以分析。</p>
+      </section>
+
+      <!-- 健康紀錄 -->
+      <div class="section-title" id="sec-health">
+        <h2>🩷 健康紀錄</h2>
+        <p>公開紀錄，並非馬房內部獸醫報告</p>
+        <div class="rule"></div>
+      </div>
+      <p class="health-text">馬會傷患紀錄子頁（2026-11-06 查核）顯示「找不到資料」 — 即係呢匹馬無任何公開傷患或獸醫紀錄。呢一點要講清楚：無公開紀錄只係代表馬會無公佈過，唔等於證明佢從未有過任何健康問題。佢未出賽，所以亦無賽後獸醫檢查紀錄。目前操練如常進行（踱步），僅此而已。</p>
+      <p class="link-row">
+        <a href="https://racing.hkjc.com/zh-hk/showcase/trackwork?b_cid=EWRHQLC" target="_blank" rel="noreferrer">馬會每日晨操片段 ↗</a>
+        <a href="https://racing.hkjc.com/zh-hk/showcase/barrier-trials?b_cid=EWRHQLC" target="_blank" rel="noreferrer">馬會試閘片段 ↗</a>
+      </p>
+
+      <!-- 市場熱度 -->
+      <div class="section-title" id="sec-market">
+        <h2>🔥 市場熱話</h2>
+        <p>網上新聞與貼士提及</p>
+        <div class="rule"></div>
+      </div>
+      <section aria-label="市場熱度">
+        <p class="health-text">截至 2026年11月6日，關於 M274 本身嘅網上提及係零：專門新聞 0 項、貼士推介 0 項。佢未命名、未出賽、未有評分、未試閘，10月18日先到港，暫時只有馬會馬匹頁一個官方來源，搵唔到提及係正常，照實寫 0，唔會虛構。</p>
+        <ul class="rows-list">
+          <li>
+            <div class="row-main">
+              <p class="line1">官方來源 — 香港賽馬會馬匹資料頁</p>
+              <p class="body">M274（未命名）嘅馬會官方檔案：血統、練馬師、馬主、進口日期同晨操紀錄都以呢頁為準。</p>
+              <a class="video-link" href="https://racing.hkjc.com/zh-hk/local/information/horse?horseid=HK_2026_M274" target="_blank" rel="noreferrer">馬會馬匹資料頁 ↗</a>
+            </div>
+          </li>
+        </ul>
+        <p class="fine-note">資料截至 2026年11月6日。同母半兄 Marwooba 係另一匹馬，佢嘅報道唔計入 M274 嘅熱度。</p>
+      </section>
+
+      <!-- 每日紀錄 -->
+      <div class="section-title">
+        <h2 class="plain">🖌️ 每日紀錄</h2>
+        <p>每日約下午 2:25 更新一次，對返 11月6日基線 · 每次顯示最近 10 次，舊紀錄保留，撳「睇更早」逐批睇</p>
+        <div class="rule"></div>
+      </div>
+      <ul class="daily-list" id="daily-list"></ul>
+      <div class="daily-more" id="daily-more" hidden>
+        <p class="count tnum" id="daily-count"></p>
+        <button type="button" class="btn" id="daily-btn">睇更早記錄</button>
+      </div>
+
+      <!-- 馬匹檔案 -->
+      <div class="section-title">
+        <h2 class="plain">🐴 馬匹檔案</h2>
+        <div class="rule"></div>
+      </div>
+      <dl class="profile-grid">
+        <div>
+          <dt>血統</dt>
+          <dd>父 Wootton Bassett · 母 Marguns（外祖父 Fastnet Rock）</dd>
+        </div>
+        <div>
+          <dt>馬主</dt>
+          <dd>The Racing Club Syndicate 1</dd>
+        </div>
+        <div>
+          <dt>年齡 / 毛色</dt>
+          <dd>3 歲澳洲馬 · 棗／棕色閹馬</dd>
+        </div>
+        <div>
+          <dt>購入</dt>
+          <dd>自購馬</dd>
+        </div>
+        <div>
+          <dt>海外戰績</dt>
+          <dd>馬會頁無列出</dd>
+        </div>
+        <div>
+          <dt>香港戰績</dt>
+          <dd>0戰 0冠 0亞 0季 · 評分未有 · 獎金 $0</dd>
+        </div>
+        <div>
+          <dt>進口</dt>
+          <dd>進口日期 2026年10月18日</dd>
+        </div>
+        <div>
+          <dt>練馬師</dt>
+          <dd>大衛希斯<span class="subnote">現時位置：香港（2026-10-18 到達）</span></dd>
+        </div>
+      </dl>
+
+      <footer class="page-foot">
+        <p>呢頁內容同 M274 Dashboard 2026-11-06 基線一致：每日約下午 2:25（香港時間）檢查一次晨操、試閘、報名排位、評分體重同獸醫紀錄，對返 2026-11-06 基線判斷進步、持平或回落；呢頁會隨之更新。游水、跑步機紀錄逢下一個工作日下午先上載，遲一日出現唔等於停操；踱步同快操當日中午已公佈。呢版只做資料跟進，唔提供投注指示。</p>
+      </footer>
+    </main>
+
+    <script>
+      // ---- Sticky nav: smooth scroll + active highlight ----
+      (function () {
+        var buttons = Array.prototype.slice.call(document.querySelectorAll("nav.topnav button"));
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        buttons.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var el = document.getElementById(btn.getAttribute("data-target"));
+            if (el) el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+          });
+        });
+        var sections = buttons
+          .map(function (b) { return document.getElementById(b.getAttribute("data-target")); })
+          .filter(Boolean);
+        if ("IntersectionObserver" in window && sections.length) {
+          var obs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+              if (!e.isIntersecting) return;
+              buttons.forEach(function (b) {
+                b.classList.toggle("active", b.getAttribute("data-target") === e.target.id);
+              });
+            });
+          }, { rootMargin: "-90px 0px -55% 0px" });
+          sections.forEach(function (s) { obs.observe(s); });
+        }
+      })();
+
+      // ---- Daily records: latest 10 first, older revealed 10 at a time ----
+      (function () {
+        var records = [
+          {
+            verdict: "持平",
+            date: "星期五 11月6日",
+            detail: "基線 · 最後操練 11月6日 踱步（沙田飛機場） · 無快操 · 無試閘 · 未有評分"
+          }
+        ];
+        var visible = 10;
+        var list = document.getElementById("daily-list");
+        var more = document.getElementById("daily-more");
+        var count = document.getElementById("daily-count");
+        var btn = document.getElementById("daily-btn");
+        function verdictColor(v) {
+          if (v === "進步") return "var(--accent)";
+          if (v === "回落") return "var(--alert)";
+          return "var(--chestnut)";
+        }
+        function render() {
+          list.innerHTML = "";
+          records.slice(0, visible).forEach(function (r) {
+            var li = document.createElement("li");
+            var badge = document.createElement("span");
+            badge.className = "verdict-badge font-display";
+            badge.textContent = r.verdict;
+            badge.style.color = verdictColor(r.verdict);
+            badge.style.borderColor = verdictColor(r.verdict);
+            var main = document.createElement("div");
+            main.className = "daily-main";
+            var p = document.createElement("p");
+            p.className = "d1";
+            p.textContent = r.date;
+            var light = document.createElement("span");
+            light.className = "light tnum";
+            light.textContent = " · " + r.detail;
+            p.appendChild(light);
+            main.appendChild(p);
+            li.appendChild(badge);
+            li.appendChild(main);
+            list.appendChild(li);
+          });
+          if (records.length > 10) {
+            more.hidden = false;
+            if (records.length > visible) {
+              count.textContent = "已顯示 " + Math.min(visible, records.length) + " / " + records.length + " 次記錄";
+              btn.textContent = "睇更早記錄";
+              btn.className = "btn";
+              btn.setAttribute("aria-label", "睇更早嘅每日紀錄，再顯示 10 次");
+            } else {
+              count.textContent = "已顯示全部 " + records.length + " 次記錄";
+              btn.textContent = "只顯示最近 10 次";
+              btn.className = "btn ghost";
+              btn.setAttribute("aria-label", "收起舊記錄，只顯示最近 10 次");
+            }
+          } else {
+            more.hidden = true;
+          }
+        }
+        btn.addEventListener("click", function () {
+          if (records.length > visible) { visible += 10; } else { visible = 10; }
+          render();
+        });
+        render();
+      })();
+    </script>
+  </body>
+</html>
