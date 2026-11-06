@@ -508,7 +508,7 @@
 
       <!-- Deployment -->
       <div class="section-title" id="sec-deployment">
-        <h2 class="font-display">出賽部署</h2>
+        <h2 class="font-display">🎯 出賽部署</h2>
         <p class="sub">復出關口：試閘及格 + 獸醫通過</p>
         <div class="rule"></div>
       </div>
@@ -525,7 +525,7 @@
 
       <!-- Fast work trend -->
       <div class="section-title" id="sec-fastwork">
-        <h2 class="font-display">快操趨勢</h2>
+        <h2 class="font-display">⏱️ 快操趨勢</h2>
         <p class="sub">從化操練，助手策騎，配備 H 頭罩；每日另有踱步及游水</p>
         <div class="rule"></div>
       </div>
@@ -540,7 +540,7 @@
 
       <!-- Races -->
       <div class="section-title" id="sec-races">
-        <h2 class="font-display">賽績</h2>
+        <h2 class="font-display">🧾 賽績</h2>
         <p class="sub">11戰 0冠 0亞 1季 · 總獎金 $175,450 · 全部沈集成馬房</p>
         <div class="rule"></div>
       </div>
@@ -549,7 +549,7 @@
 
       <!-- Trials -->
       <div class="section-title" id="sec-trials">
-        <h2 class="font-display">試閘 12課</h2>
+        <h2 class="font-display">📈 試閘 12課</h2>
         <p class="sub">12課 · 最近一次 2026-02-24 · 手術後至今未有新試閘</p>
         <div class="rule"></div>
       </div>
@@ -559,7 +559,7 @@
 
       <!-- Health -->
       <div class="section-title" id="sec-health">
-        <h2 class="font-display">健康紀錄</h2>
+        <h2 class="font-display">🩷 健康紀錄</h2>
         <p class="sub">公開紀錄，並非馬房內部獸醫報告</p>
         <div class="rule"></div>
       </div>
@@ -575,6 +575,23 @@
         <a href="https://racing.hkjc.com/zh-hk/showcase/trackwork?b_cid=EWRHQLC" target="_blank" rel="noreferrer">馬會每日晨操片段 ↗</a>
         <a href="https://racing.hkjc.com/zh-hk/showcase/barrier-trials?b_cid=EWRHQLC" target="_blank" rel="noreferrer">馬會試閘片段 ↗</a>
       </p>
+
+      <!-- Market heat -->
+      <div class="section-title" id="sec-market">
+        <h2 class="font-display">🔥 市場熱話</h2>
+        <div class="rule"></div>
+      </div>
+      <p class="summary-text" style="margin-top:0;">2026 年市場熱度接近零，全年只得 1 次馬經心水提及；2026 年 3 月手術之後至今，網上無任何復出、試閘嘅新聞報道或貼士推介。</p>
+      <ul>
+        <li class="vet-item">
+          <p class="date">貼士推介 · 2026年1月4日</p>
+          <p>文匯馬經 B2「柏積士各場心水」，2026年1月4日沙田，將贏得爽列入第一場（第五班1400米草地）心水四駒之一，評述寫「「籐王駒」質新未見底。「贏得爽」轉場要防。」；當日贏得爽跑第7名。</p>
+          <p class="link-row">
+            <a href="https://dw-media.tkww.hk/epaper/wwp/20260104/b02-0104.pdf" target="_blank" rel="noreferrer">文匯馬經 B2 原文（PDF） ↗</a>
+          </p>
+        </li>
+      </ul>
+      <p class="after-note">資料截至 2026年11月5日。</p>
 
       <!-- Daily history -->
       <div class="section-title">
@@ -593,7 +610,7 @@
 
       <!-- Profile -->
       <div class="section-title">
-        <h2 class="font-display plain">馬匹檔案</h2>
+        <h2 class="font-display plain">🐴 馬匹檔案</h2>
         <div class="rule"></div>
       </div>
       <dl class="profile-grid">
@@ -691,11 +708,12 @@
 
       // ---------- top nav ----------
       var NAV_ITEMS = [
-        { id: "sec-deployment", label: "出賽部署" },
-        { id: "sec-fastwork", label: "快操趨勢" },
+        { id: "sec-deployment", label: "部署" },
+        { id: "sec-fastwork", label: "趨勢" },
         { id: "sec-races", label: "賽績" },
         { id: "sec-trials", label: "試閘" },
-        { id: "sec-health", label: "健康紀錄" }
+        { id: "sec-market", label: "熱度" },
+        { id: "sec-health", label: "健康" }
       ];
       var navEl = document.getElementById("topnav");
       NAV_ITEMS.forEach(function (item) {
