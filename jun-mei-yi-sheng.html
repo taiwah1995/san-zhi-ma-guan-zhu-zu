@@ -473,7 +473,7 @@
 
       <!-- Main opponents -->
       <h3 class="font-display" style="margin:24px 0 8px;font-size:18px;font-weight:700">🔍 主要對手分析</h3>
-      <ul id="opponent-list" class="prz" style="display:flex;flex-direction:column;gap:12px"></ul>
+      <ul id="opponent-list" class="prz" style="display:flex;flex-direction:column;gap:12px;margin:0;padding:0"></ul>
 
       <!-- Remaining opponents -->
       <section class="card prz" style="margin-top:16px" aria-label="其餘對手速評">
@@ -1168,7 +1168,7 @@
         MAIN_OPPONENTS.forEach(function (o) {
           var color = THREAT_COLORS[o.threat] || "var(--dim)";
           var li = document.createElement("li");
-          li.style.cssText = "padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)";
+          li.style.cssText = "width:100%;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)";
           var top = document.createElement("div");
           top.style.cssText = "display:flex;align-items:flex-start;justify-content:space-between;gap:12px";
           var title = el("p", null, "");
