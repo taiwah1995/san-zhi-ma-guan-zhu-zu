@@ -185,6 +185,7 @@
         .profile-grid { grid-template-columns: 1fr; }
         .item-grid { grid-template-columns: 1fr; }
         .item-grid .r { text-align: left; }
+        .pos-name { display: none; }
       }
     </style>
   </head>
@@ -289,125 +290,411 @@
 
       <!-- Deployment -->
       <div class="section-title" id="sec-deployment">
-        <h2>🎯出賽部署</h2>
-        <p class="sub">報名或排位有變動會即日更新呢一節</p>
+        <h2>🎯 出賽部署</h2>
+        <p class="sub">第11場 · 最終排位已出 · 全場 14 匹</p>
         <div class="rule"></div>
       </div>
-      <section aria-label="出賽部署">
-        <p style="font-size:14px;line-height:1.7">最終排位已出（19/11 核實）：星期日 11 月 22 日 18:25 第 11 場，中銀香港 FAMILYMAX 讓賽，獎金 $1,860,000；沙田草地「B+2」，第三班 1400 米乙讓賽（85-60）。全場 14 匹正選＋2 匹後備（最終排位表只列 2 匹後備；報名階段曾列 5 匹，同馬房假面勇士未見於最終排位表）。</p>
-        <dl class="kv" style="margin-top:8px">
-          <div><dt>天道鐵驥（M071）</dt><dd style="font-weight:600">3 號 · 9 檔 · 麥道朗 · 133 磅 · 評分 83</dd></div>
-          <div><dt>配備</dt><dd>TT-（綁繫舌帶除去）· 王牌馬（+）</dd></div>
-          <div><dt>排位體重</dt><dd>1101 磅</dd></div>
-        </dl>
-        <p style="margin-top:16px;font-size:14px;font-weight:700">全場排位表（14 匹正選）</p>
-        <dl class="kv" style="margin-top:4px">
-          <div><dt>1 號 極上紗瓏 K585</dt><dd style="text-align:right;line-height:1.65">羅富全 · 3 檔 · 潘明輝 · 135 磅 · 評分 85 · TT</dd></div>
-          <div><dt>2 號 喜尊龍 J481</dt><dd style="text-align:right;line-height:1.65">蘇偉賢 · 14 檔 · 奧爾民 · 135 磅 · 評分 85 · CP1/TT</dd></div>
-          <div><dt>3 號 天道鐵驥 M071</dt><dd style="text-align:right;font-weight:600;line-height:1.65">甘敏斯 · 9 檔 · 麥道朗 · 133 磅 · 評分 83 · TT-</dd></div>
-          <div><dt>4 號 安都 K033</dt><dd style="text-align:right;line-height:1.65">蔡約翰 · 11 檔 · 麥文堅 · 132 磅 · 評分 82 · E/TT</dd></div>
-          <div><dt>5 號 會當凌 K122</dt><dd style="text-align:right;line-height:1.65">巫偉傑 · 5 檔 · 周俊樂（-2）· 131 磅 · 評分 81 · TT</dd></div>
-          <div><dt>6 號 觀眾之力 K107</dt><dd style="text-align:right;line-height:1.65">方嘉柏 · 1 檔 · 巴度 · 131 磅 · 評分 81 · TT</dd></div>
-          <div><dt>7 號 友瑩亮 K400</dt><dd style="text-align:right;line-height:1.65">伍鵬志 · 2 檔 · 梁家俊 · 129 磅 · 評分 79 · CP</dd></div>
-          <div><dt>8 號 綫路英雄 J428</dt><dd style="text-align:right;line-height:1.65">沈集成 · 13 檔 · 潘頓 · 126 磅 · 評分 76 · CP/TT</dd></div>
-          <div><dt>9 號 包裝明將 L013</dt><dd style="text-align:right;line-height:1.65">姚本輝 · 7 檔 · 袁幸堯（-7）· 122 磅 · 評分 72 · B</dd></div>
-          <div><dt>10 號 肯佩斯 J265</dt><dd style="text-align:right;line-height:1.65">賀賢 · 4 檔 · 艾兆禮 · 120 磅 · 評分 70</dd></div>
-          <div><dt>11 號 閃電小子 L126</dt><dd style="text-align:right;line-height:1.65">文家良 · 10 檔 · 奧璇璧 · 119 磅 · 評分 69 · B/TT</dd></div>
-          <div><dt>12 號 炎龍 L563</dt><dd style="text-align:right;line-height:1.65">告東尼 · 8 檔 · 田泰安 · 116 磅 · 評分 66 · TT1</dd></div>
-          <div><dt>13 號 開心鑽寶 L356</dt><dd style="text-align:right;line-height:1.65">呂健威 · 12 檔 · 金誠剛 · 116 磅 · 評分 66 · XB1</dd></div>
-          <div><dt>14 號 騰昇瀧駒 L340</dt><dd style="text-align:right;line-height:1.65">桂福特 · 6 檔 · 楊明綸 · 115 磅 · 評分 62</dd></div>
-          <div><dt>後備 R1 競駿皇者 K011</dt><dd style="text-align:right;line-height:1.65">游達榮 · 118 磅 · 評分 68 · TT</dd></div>
-          <div><dt>後備 R2 加利斯 L564</dt><dd style="text-align:right;line-height:1.65">韋達 · 133 磅 · 評分 83 · XB2</dd></div>
-        </dl>
+
+      <section class="card-lg" style="background:var(--accent);border-radius:var(--radius);color:#f5f7f2" aria-label="下一場賽事">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px">
+          <div>
+            <p class="font-display" style="font-size:24px;font-weight:900;line-height:1.3">星期日 11月22日 <span class="tnum">· 18:25</span> · 第11場</p>
+            <p style="margin-top:2px;font-size:14px;font-weight:700;opacity:.95">中銀香港FAMILYMAX讓賽 <span style="font-weight:400;opacity:.85">· 獎金 $1,860,000</span></p>
+            <p style="margin-top:4px;font-size:14px;opacity:.9">沙田 草地「B+2」 · 第三班 1400米 · 乙讓賽（85-60）</p>
+          </div>
+          <div style="flex-shrink:0;text-align:right">
+            <p style="font-size:12px;opacity:.8">實際負磅</p>
+            <p class="tnum font-display" style="font-size:30px;font-weight:900;line-height:1.2">133<span style="font-size:16px;font-weight:700"> 磅</span></p>
+            <p class="tnum" style="font-size:12px;opacity:.8">牌面 133 磅</p>
+          </div>
+        </div>
+        <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:6px;font-size:12px;font-weight:700">
+          <span style="padding:4px 10px;background:rgba(255,255,255,0.16);border-radius:999px">3號馬</span>
+          <span style="padding:4px 10px;background:rgba(255,255,255,0.16);border-radius:999px">9檔</span>
+          <span style="padding:4px 10px;background:rgba(255,255,255,0.16);border-radius:999px">麥道朗</span>
+          <span style="padding:4px 10px;background:rgba(255,255,255,0.16);border-radius:999px">評分 83</span>
+          <span style="padding:4px 10px;background:rgba(255,255,255,0.16);border-radius:999px">配備 TT-</span>
+          <span style="padding:4px 10px;background:rgba(255,255,255,0.16);border-radius:999px">排位體重 1101 磅</span>
+        </div>
+        <p style="margin-top:12px;display:inline-block;padding:4px 10px;font-size:12px;font-weight:700;background:rgba(255,255,255,0.16);border-radius:999px">最終排位已出 — 第11場 · 14匹出賽</p>
+        <p style="margin-top:12px;font-size:14px;line-height:1.7;opacity:.95">最終排位已出（19/11 核實）：星期日 11 月 22 日 18:25 第 11 場，中銀香港 FAMILYMAX 讓賽，獎金 $1,860,000；沙田草地「B+2」，第三班 1400 米乙讓賽（85-60）。天道鐵驥 3 號、9 檔、麥道朗、133 磅、評分 83，配備 TT-（綁繫舌帶除去）、王牌馬（+），排位體重 1101 磅。全場 14 匹正選＋2 匹後備（最終排位表只列 2 匹後備；報名階段曾列 5 匹，同馬房假面勇士未見於最終排位表）。</p>
       </section>
 
-      <!-- Pre-race assessment -->
+      <!-- Full field -->
+      <section class="card" style="margin-top:16px" aria-label="全場最終排位">
+        <h3 class="font-display" style="margin:0 0 4px;font-size:18px;font-weight:700">全場 14 匹 · 最終排位</h3>
+        <table style="width:100%;border-collapse:collapse;table-layout:fixed;font-size:14px" aria-label="全場最終排位分欄表">
+          <colgroup>
+            <col style="width:9%" /><col style="width:19%" /><col style="width:16%" /><col style="width:11%" /><col style="width:19%" /><col style="width:13%" /><col style="width:13%" />
+          </colgroup>
+          <thead>
+            <tr style="font-size:12px;color:var(--dim);border-bottom:2px solid var(--border)">
+              <th scope="col" class="tnum" style="padding:6px 4px;text-align:left;font-weight:600">號</th>
+              <th scope="col" style="padding:6px 4px;text-align:left;font-weight:600">馬名</th>
+              <th scope="col" style="padding:6px 4px;text-align:left;font-weight:600">練馬師</th>
+              <th scope="col" class="tnum" style="padding:6px 4px;text-align:center;font-weight:600">檔位</th>
+              <th scope="col" style="padding:6px 4px;text-align:left;font-weight:600">騎師</th>
+              <th scope="col" class="tnum" style="padding:6px 4px;text-align:center;font-weight:600">負磅</th>
+              <th scope="col" class="tnum" style="padding:6px 4px;text-align:right;font-weight:600">評分</th>
+            </tr>
+          </thead>
+          <tbody id="field-body"></tbody>
+        </table>
+      </section>
+
+      <!-- Chance assessment -->
+      <section class="card" style="margin-top:16px" aria-label="天道鐵驥機會研判">
+        <h3 class="font-display" style="margin:0;font-size:18px;font-weight:700">天道鐵驥機會研判</h3>
+        <dl style="margin-top:8px;font-size:14px">
+          <div style="display:flex;gap:8px;margin-bottom:6px">
+            <dt style="flex-shrink:0;font-weight:600;color:var(--chestnut)">勝出機會</dt>
+            <dd style="margin:0;font-weight:700">有，但唔係最大</dd>
+          </div>
+          <div style="display:flex;gap:8px">
+            <dt style="flex-shrink:0;font-weight:600;color:var(--accent)">入三甲</dt>
+            <dd style="margin:0;font-weight:700">機會高過贏面</dd>
+          </div>
+        </dl>
+        <p style="margin-top:10px;font-size:14px;line-height:1.7">昆士蘭打吡冠軍級數、麥道朗故劍重逢、快操連續提速（59.1→56.5→55.1）係利好；香港首戰、1400 米短於最佳路程、9 檔、無在港賽績係不利。留後跑法配合預計誠實偏快步速，直路後勁係強項；三甲係最實在嘅目標。</p>
+        <p style="margin-top:10px;font-size:14px;line-height:1.7;color:var(--dim)"><span style="font-weight:600;color:var(--text)">步速形勢：</span>預計步速誠實偏快。極上紗瓏同包裝明將兩匹放頭馬爭放，友瑩亮跟前，對後上馬有利；如果前面放得慢，後上馬會好難追。</p>
+      </section>
+
+      <!-- Pre-race forecast -->
+      <section style="margin-top:16px;padding:16px;background:var(--surface);border:1.5px solid var(--chestnut);border-radius:var(--radius)" aria-label="賽前評估：最可能結果">
+        <h3 class="font-display" style="margin:0;font-size:18px;font-weight:700">賽前評估：最可能結果</h3>
+
+        <div style="margin-top:12px">
+          <p style="font-size:16px;font-weight:700"><span style="color:var(--chestnut)">冠軍最可能：</span>友瑩亮</p>
+          <p style="margin-top:4px;font-size:14px;line-height:1.7">同程同班近三仗 2-1-2，2 檔、129 磅、梁家俊；磅位較 25/10 贏佢頸位嘅包裝明將大幅有利（嗰仗讓 18 磅，今仗只讓 7 磅）。</p>
+        </div>
+
+        <div style="margin-top:16px">
+          <p style="font-size:16px;font-weight:700"><span style="color:var(--chestnut)">天道鐵驥：</span>爭三甲最實在，贏要靠形勢</p>
+          <p style="margin-top:4px;font-size:14px;line-height:1.7">要贏就要步速誠實偏快、起步乾淨、直路望到空，兼前面鬥燒；1400 米對佢偏短，首戰以適應為主。</p>
+        </div>
+
+        <div style="margin-top:16px">
+          <p style="font-size:16px;font-weight:700"><span style="color:var(--chestnut)">第2、第3嘅爭奪：</span>極上紗瓏、包裝明將、觀眾之力、綫路英雄</p>
+          <p style="margin-top:4px;font-size:14px;line-height:1.7">極上紗瓏（放頭＋1400 米三捷，頂磅係阻力）、包裝明將（同程贏過呢班，輕磅＋減 7 磅）、觀眾之力（近況火熱，沙田 1400 米未證明）、綫路英雄（同程穩健，13 檔係阻力）爭。</p>
+        </div>
+
+        <div style="margin-top:16px">
+          <p style="font-size:16px;font-weight:700;color:var(--chestnut)">三種走勢，結果會點變</p>
+          <ul style="margin-top:6px">
+            <li style="font-size:14px;line-height:1.7;margin-bottom:6px"><span style="font-weight:600;color:var(--accent)">步速誠實偏快：</span>前面鬥燒，後上馬得益，天道鐵驥、觀眾之力、綫路英雄有機會追入三甲。</li>
+            <li style="font-size:14px;line-height:1.7;margin-bottom:6px"><span style="font-weight:600;color:var(--accent)">步速慢、前面偷到步：</span>極上紗瓏或包裝明將控制步速，後上馬追唔切，天道鐵驥三甲都難。</li>
+            <li style="font-size:14px;line-height:1.7"><span style="font-weight:600;color:var(--accent)">起步受阻或者轉彎俾人夾：</span>天道鐵驥留後更後，直路要蝕位，贏面同三甲機會一齊跌。</li>
+          </ul>
+        </div>
+
+        <figure style="margin-top:20px;border-top:1px solid var(--border);padding-top:16px" aria-label="全場機會評分">
+          <p style="font-size:16px;font-weight:700;color:var(--chestnut)">全場機會評分（100分滿分）</p>
+          <p style="margin-top:4px;font-size:12px;line-height:1.65;color:var(--dim)">每匹一個分數，最高分係機會最大嗰匹。分數係相對機會評分，唔係勝率 — 14匹加埋唔會等於100分。</p>
+          <ol id="score-list" style="margin-top:12px"></ol>
+          <figcaption style="margin-top:12px;font-size:12px;line-height:1.65;color:var(--dim)">分數係練馬師角度嘅賽前相對機會判斷，唔係賠率，更加唔係保證；排位體重已公佈 1101 磅，星期六只係踱步、無新快操，賽前評估維持 19/11 版本，分數不變。</figcaption>
+        </figure>
+
+        <figure style="margin-top:20px;border-top:1px solid var(--border);padding-top:16px" aria-label="估計走位圖">
+          <p style="font-size:16px;font-weight:700;color:var(--chestnut)">估計走位圖</p>
+          <p style="margin-top:4px;font-size:12px;line-height:1.65;color:var(--dim)">賽前估計，唔係賽果。主情境：步速誠實偏快。左至右四個階段，每欄由上至下係當時走位（最上 = 領先）。圖標係馬頭標記，數字係馬號；綠色係天道鐵驥。3 號天道鐵驥：第 12 → 第 11 → 第 6 → 第 3 — 9 檔留後，直路入口由第 11 追到第 6，末段衝上第 3；要贏，就要前面鬥燒，加埋自己起步乾淨、直路望到空。</p>
+          <div id="position-chart" style="margin-top:12px;display:grid;grid-template-columns:repeat(4,1fr);gap:6px"></div>
+          <figcaption style="margin-top:12px">
+            <ul id="position-notes"></ul>
+            <p style="margin-top:12px;font-size:12px;line-height:1.65;color:var(--dim)">備註：呢張係賽前估計，唔係賽果。關鍵轉折位係直路入口：如果天道鐵驥到嗰陣仲喺第 8 位之後，或者前面步速慢，佢就追唔切；前面鬥燒，佢先有機會追到第 1。</p>
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- Main opponents -->
+      <h3 class="font-display" style="margin:24px 0 8px;font-size:18px;font-weight:700">🔍 主要對手分析</h3>
+      <ul id="opponent-list" style="display:flex;flex-direction:column;gap:12px"></ul>
+
+      <!-- Remaining opponents -->
+      <section class="card" style="margin-top:16px" aria-label="其餘對手速評">
+        <h3 class="font-display" style="margin:0;font-size:18px;font-weight:700">其餘對手速評</h3>
+        <div id="quick-list" style="margin-top:10px;display:flex;flex-direction:column;gap:12px"></div>
+      </section>
+
+      <!-- Race result assessment -->
       <div class="section-title">
-        <h2 class="plain">🔍賽前評估 · 22/11 沙田第 11 場</h2>
-        <p class="sub">第三班 1400 米 · 機會評分滿分 100 分，只作賽前分析參考</p>
+        <h2 class="plain">📝 賽事結果評估</h2>
+        <p class="sub">賽後對返賽前研判逐樣核實 — 步速、磅位、際遇、對手表現、賽後評分同部署</p>
         <div class="rule"></div>
       </div>
-      <section aria-label="賽前評估">
-        <p style="font-size:14px;line-height:1.7"><strong>天道鐵驥機會研判 — 勝出機會：有，但唔係最大。</strong>昆士蘭打吡冠軍級數、麥道朗故劍重逢、快操連續提速（59.1→56.5→55.1）係利好；香港首戰、1400 米短於最佳路程、9 檔、無在港賽績係不利。<strong>入三甲：機會高過贏面。</strong>留後跑法配合預計誠實偏快步速，直路後勁係強項；三甲係最實在嘅目標。</p>
-        <p style="margin-top:8px;font-size:14px;line-height:1.7"><strong>步速形勢：預計步速誠實偏快。</strong>極上紗瓏同包裝明將兩匹放頭馬爭放，友瑩亮跟前，對後上馬有利；如果前面放得慢，後上馬會好難追。</p>
-        <p style="margin-top:8px;font-size:14px;line-height:1.7"><strong>冠軍最可能：友瑩亮。</strong>同程同班近三仗 2-1-2，2 檔、129 磅、梁家俊；磅位較 25/10 贏佢頸位嘅包裝明將大幅有利（嗰仗讓 18 磅，今仗只讓 7 磅）。<strong>天道鐵驥：爭三甲最實在，贏要靠形勢</strong> — 要贏就要步速誠實偏快、起步乾淨、直路望到空，兼前面鬥燒；1400 米對佢偏短，首戰以適應為主。第 2、第 3 嘅爭奪：極上紗瓏（放頭＋1400 米三捷，頂磅係阻力）、包裝明將（同程贏過呢班，輕磅＋減 7 磅）、觀眾之力（近況火熱，沙田 1400 米未證明）、綫路英雄（同程穩健，13 檔係阻力）爭。</p>
-        <p style="margin-top:8px;font-size:14px;line-height:1.7"><strong>三種走勢，結果會點變：</strong>步速誠實偏快 — 前面鬥燒，後上馬得益，天道鐵驥、觀眾之力、綫路英雄有機會追入三甲。步速慢、前面偷到步 — 極上紗瓏或包裝明將控制步速，後上馬追唔切，天道鐵驥三甲都難。起步受阻或者轉彎俾人夾 — 天道鐵驥留後更後，直路要蝕位，贏面同三甲機會一齊跌。</p>
-
-        <p style="margin-top:16px;font-size:14px;font-weight:700">主要對手分析（六匹）</p>
-        <article class="item">
-          <p style="font-size:14px;font-weight:600">【主要威脅】7 號 友瑩亮 K400 — 88 分</p>
-          <p style="margin-top:2px;font-size:14px;color:var(--dim)">伍鵬志 · 2 檔 · 梁家俊 · 129 磅 · 評分 79</p>
-          <p style="margin-top:2px;font-size:14px;line-height:1.7">近績：25/10 同程同班亞軍（頸位負包裝明將，135 磅，走位 2-3-4-2）；01/10 同程同班冠軍（頭位，122 磅）；13/09 同程同班亞軍（1-1/4 馬位）。近三仗同程三班 2-1-2，全部接近。分析：全場最有根據嘅同程馬，跑法跟前，2 檔有利。磅位較 25/10 大幅有利 — 嗰仗佢孭 135 磅輸頸位，今仗只孭 129 磅，而贏佢嘅包裝明將由 117 磅加到 122 磅。評分升 2 分至 79，狀態正盛。最大威脅。</p>
-        </article>
-        <article class="item">
-          <p style="font-size:14px;font-weight:600">【主要威脅】1 號 極上紗瓏 K585 — 86 分</p>
-          <p style="margin-top:2px;font-size:14px;color:var(--dim)">羅富全 · 3 檔 · 潘明輝 · 135 磅 · 評分 85</p>
-          <p style="margin-top:2px;font-size:14px;line-height:1.7">近績：在港 6 戰 4 勝；1400 米三捷（29/03、22/02 三班，27/12 四班，三仗全程領放，走位 1-1-1-1）；上仗 27/09 二班 1200 米第 3 名（負 1-1/2 馬位，124 磅，首次綁繫舌帶）。分析：放頭馬，1400 米係佢贏馬路程，3 檔有利領放，潘明輝包辦四捷。阻力係頂磅 135 磅（上仗二班只孭 124 磅），同埋今仗有包裝明將一齊爭放，未必放到咁舒服。如果放到慢步速，佢可以一放到底。另外注意：馬會傷患紀錄顯示佢 19/10 賽前檢查發現心律不正常而退出賽事，10/11 已通過獸醫檢查（The Standard 19/11 亦提及佢其後試閘表現唔錯）；健康已獲放行，但一個月前嘅心律問題係要留意嘅背景。</p>
-        </article>
-        <article class="item">
-          <p style="font-size:14px;font-weight:600">【主要威脅】9 號 包裝明將 L013 — 82 分</p>
-          <p style="margin-top:2px;font-size:14px;color:var(--dim)">姚本輝 · 7 檔 · 袁幸堯（-7）· 122 磅 · 評分 72</p>
-          <p style="margin-top:2px;font-size:14px;line-height:1.7">近績：上仗 25/10 同程同班冠軍（頸位贏友瑩亮，117 磅，13 檔放頭，走位 3-1-1-1）；04/10 三班 1200 米第 5 名；21/06 四班 1200 米冠軍。分析：25/10 同一場贏過友瑩亮同綫路英雄，今仗袁幸堯減 7 磅再騎，實際負磅只係 122 磅，7 檔比上仗 13 檔好。阻力係負磅加 5 磅、評分升 6 分，同埋要再同極上紗瓏爭放。放頭威脅。</p>
-        </article>
-        <article class="item">
-          <p style="font-size:14px;font-weight:600">【磅位威脅】6 號 觀眾之力 K107 — 78 分</p>
-          <p style="margin-top:2px;font-size:14px;color:var(--dim)">方嘉柏 · 1 檔 · 巴度 · 131 磅 · 評分 81</p>
-          <p style="margin-top:2px;font-size:14px;line-height:1.7">近績：上仗 04/11 跑馬地 1200 米三班冠軍（11 檔，134 磅，巴度，後上 8-8-1 贏半馬位）；07/10 跑馬地 1200 米亞軍（頸位）；10/06 跑馬地 1200 米冠軍。評分升 6 分至 81。分析：近況係全場最火熱之一，三仗跑馬地 1-2-1。但三場都係跑馬地 1200 米；沙田 1400 米只跑過兩次第 5 名（31/05 負 2 馬位、13/07/25 負 3 馬位），未證明。1 檔留後跑法，要睇步速夠唔夠快。</p>
-        </article>
-        <article class="item">
-          <p style="font-size:14px;font-weight:600">【三甲攪局】8 號 綫路英雄 J428 — 74 分</p>
-          <p style="margin-top:2px;font-size:14px;color:var(--dim)">沈集成 · 13 檔 · 潘頓 · 126 磅 · 評分 76</p>
-          <p style="margin-top:2px;font-size:14px;line-height:1.7">近績：上仗 25/10 同程同班季軍（1-1/4 馬位，134 磅，14 檔，走位 6-5-7-3）；27/09 同程同班亞軍（短馬頭位，129 磅，潘頓）；06/09 同程第 5 名。近五仗 1400 米三班全部入前五。分析：同程最穩健嘅馬之一，潘頓主轡，今仗負磅減 8 磅至 126 磅。最大阻力係 13 檔，轉彎要蝕位，贏面低過入三甲機會。</p>
-        </article>
-        <article class="item">
-          <p style="font-size:14px;font-weight:600">【三甲攪局】4 號 安都 K033 — 64 分</p>
-          <p style="margin-top:2px;font-size:14px;color:var(--dim)">蔡約翰 · 11 檔 · 麥文堅 · 132 磅 · 評分 82</p>
-          <p style="margin-top:2px;font-size:14px;line-height:1.7">近績：上仗 08/11 二班 1400 米第 5 名（負 2-3/4 馬位，116 磅，留後 9-8-8-5）；19/10 三班 1400 米第 9 名（4-1/2 馬位）；強項係 1600 米（13/06 三班 1600 米冠軍、31/05 亞軍）。分析：班次夠、評分夠，但 1400 米短過佢最佳路程，近兩仗 1400 米表現一般，11 檔亦唔理想。麥文堅客串執韁係變數，計三甲唔計贏。</p>
-        </article>
-
-        <p style="margin-top:16px;font-size:14px;font-weight:700">其餘對手速評</p>
-        <p style="margin-top:4px;font-size:14px;line-height:1.7"><strong>2 號 喜尊龍（機會較低）：</strong>評分 85 同場最高，但 14 檔最外、頂磅 135 磅，近績 3/7/9/7/2/5 唔穩定，首次戴羊毛面箍係未知數。<strong>5 號 會當凌（機會較低）：</strong>近績 13/12/7/9/10/14，六仗全敗，評分跌 2 分，狀態未見起色。<strong>10 號 肯佩斯（三甲攪局）：</strong>近兩仗連勝（班次未核實），評分升 6 分至 70，120 磅輕磅、4 檔，今仗升班考驗，唔可以完全睇小。<strong>11 號 閃電小子（機會較低）：</strong>近績 6/9/6/1/2/12，上仗第 12 名，狀態回落。<strong>12 號 炎龍（未知數）：</strong>在港未出賽，無近績可考，首次綁繫舌帶，告東尼馬房初出馬，實力未核實。<strong>13 號 開心鑽寶（未知數）：</strong>在港未出賽，無近績可考，首次交叉鼻箍，呂健威馬房初出馬，實力未核實。<strong>14 號 騰昇瀧駒（機會較低）：</strong>在港僅兩仗，第 11 名同第 10 名，評分跌 2 分至 62，全場最低。<strong>後備 R1 競駿皇者（機會較低）：</strong>近績 8/11/4/3/6/5，118 磅，游達榮馬房；即使補上，近況亦唔突出。<strong>後備 R2 加利斯（未知數）：</strong>在港僅兩仗（12/3），133 磅，評分 83，韋達馬房；樣本太少，未核實。</p>
-
-        <p style="margin-top:16px;font-size:14px;font-weight:700">全場機會評分（100 分滿分）</p>
-        <p style="margin-top:2px;font-size:12px;line-height:1.65;color:var(--dim)">相對機會，唔係勝率，14 匹加埋唔會等於 100 分；分數係練馬師角度嘅賽前相對機會判斷，唔係賠率，更加唔係保證；排位體重已公佈 1101 磅，星期六只係踱步、無新快操，賽前評估維持 19/11 版本，分數不變。</p>
-        <dl class="kv" style="margin-top:4px">
-          <div><dt>7 號 友瑩亮</dt><dd class="tnum" style="font-weight:700">88</dd></div>
-          <div><dt>1 號 極上紗瓏</dt><dd class="tnum" style="font-weight:700">86</dd></div>
-          <div><dt>9 號 包裝明將</dt><dd class="tnum" style="font-weight:700">82</dd></div>
-          <div><dt>6 號 觀眾之力</dt><dd class="tnum" style="font-weight:700">78</dd></div>
-          <div><dt>8 號 綫路英雄</dt><dd class="tnum" style="font-weight:700">74</dd></div>
-          <div><dt>3 號 天道鐵驥（M071）</dt><dd class="tnum" style="font-weight:700">68 · 未知數，存疑</dd></div>
-          <div><dt>4 號 安都</dt><dd class="tnum" style="font-weight:700">64</dd></div>
-          <div><dt>10 號 肯佩斯</dt><dd class="tnum">58</dd></div>
-          <div><dt>2 號 喜尊龍</dt><dd class="tnum">55</dd></div>
-          <div><dt>後備 R2 加利斯</dt><dd class="tnum">45 · 未知數，存疑</dd></div>
-          <div><dt>11 號 閃電小子</dt><dd class="tnum">45</dd></div>
-          <div><dt>後備 R1 競駿皇者</dt><dd class="tnum">42</dd></div>
-          <div><dt>12 號 炎龍</dt><dd class="tnum">40 · 未知數，存疑</dd></div>
-          <div><dt>13 號 開心鑽寶</dt><dd class="tnum">40 · 未知數，存疑</dd></div>
-          <div><dt>5 號 會當凌</dt><dd class="tnum">38</dd></div>
-          <div><dt>14 號 騰昇瀧駒</dt><dd class="tnum">30</dd></div>
-        </dl>
-
-        <p style="margin-top:16px;font-size:14px;font-weight:700">估計走位圖（賽前估計，唔係賽果 · 主情境：步速誠實偏快）</p>
-        <p style="margin-top:2px;font-size:12px;line-height:1.65;color:var(--dim)">四個階段，每欄數字係當時走位次序（1 ＝ 領先）。3 號天道鐵驥：第 12 → 第 11 → 第 6 → 第 3 — 9 檔留後，直路入口由第 11 追到第 6，末段衝上第 3；要贏，就要前面鬥燒，加埋自己起步乾淨、直路望到空。</p>
-        <dl class="kv" style="margin-top:4px">
-          <div><dt>出閘 · 首 400 米</dt><dd style="text-align:right;line-height:1.65">1 極上紗瓏 · 2 包裝明將 · 3 友瑩亮 · 4 肯佩斯 · 5 安都 · 6 喜尊龍 · 7 炎龍 · 8 開心鑽寶 · 9 騰昇瀧駒 · 10 閃電小子 · 11 綫路英雄 · 12 天道鐵驥 · 13 觀眾之力 · 14 會當凌</dd></div>
-          <div><dt>中段 · 800 米</dt><dd style="text-align:right;line-height:1.65">1 極上紗瓏 · 2 包裝明將 · 3 友瑩亮 · 4 肯佩斯 · 5 安都 · 6 喜尊龍 · 7 炎龍 · 8 開心鑽寶 · 9 閃電小子 · 10 騰昇瀧駒 · 11 天道鐵驥 · 12 綫路英雄 · 13 觀眾之力 · 14 會當凌</dd></div>
-          <div><dt>直路入口</dt><dd style="text-align:right;line-height:1.65">1 極上紗瓏 · 2 包裝明將 · 3 友瑩亮 · 4 肯佩斯 · 5 安都 · 6 天道鐵驥 · 7 綫路英雄 · 8 觀眾之力 · 9 喜尊龍 · 10 炎龍 · 11 閃電小子 · 12 開心鑽寶 · 13 騰昇瀧駒 · 14 會當凌</dd></div>
-          <div><dt>終點 · 估計名次</dt><dd style="text-align:right;font-weight:600;line-height:1.65">1 友瑩亮 · 2 極上紗瓏 · 3 天道鐵驥 · 4 包裝明將 · 5 觀眾之力 · 6 綫路英雄 · 7 安都 · 8 肯佩斯 · 9 喜尊龍 · 10 炎龍 · 11 閃電小子 · 12 開心鑽寶 · 13 騰昇瀧駒 · 14 會當凌</dd></div>
-        </dl>
-        <p style="margin-top:8px;font-size:12px;line-height:1.65;color:var(--dim)">備註：呢張係賽前估計，唔係賽果。關鍵轉折位係直路入口：如果天道鐵驥到嗰陣仲喺第 8 位之後，或者前面步速慢，佢就追唔切；前面鬥燒，佢先有機會追到第 1。</p>
+      <section class="card card-lg" aria-label="賽事結果評估">
+        <p style="font-size:14px;font-weight:700;line-height:1.7">未跑待評估</p>
+        <p style="margin-top:10px;font-size:14px;line-height:1.7">22/11 首戰跑完並核實賽果之後，賽後評估會寫喺呢一節。</p>
       </section>
 
-      <!-- Post-race assessment -->
-      <div class="section-title">
-        <h2 class="plain">📝賽事結果評估</h2>
-        <div class="rule"></div>
-      </div>
-      <section aria-label="賽事結果評估">
-        <p style="font-size:14px;line-height:1.7">未跑待評估。22/11 首戰跑完並核實賽果之後，賽後評估會寫喺呢一節。</p>
-      </section>
+      <script>
+      (function () {
+        function el(tag, cls, text) {
+          var n = document.createElement(tag);
+          if (cls) n.className = cls;
+          if (text != null) n.textContent = text;
+          return n;
+        }
+
+        /* ---------- Full field table ---------- */
+        var FIELD = [
+          { no: "1", name: "極上紗瓏", code: "K585", trainer: "羅富全", draw: "3", jockey: "潘明輝", weight: 135, rating: 85 },
+          { no: "2", name: "喜尊龍", code: "J481", trainer: "蘇偉賢", draw: "14", jockey: "奧爾民", weight: 135, rating: 85 },
+          { no: "3", name: "天道鐵驥", code: "M071", trainer: "甘敏斯", draw: "9", jockey: "麥道朗", weight: 133, rating: 83, self: true },
+          { no: "4", name: "安都", code: "K033", trainer: "蔡約翰", draw: "11", jockey: "麥文堅", weight: 132, rating: 82 },
+          { no: "5", name: "會當凌", code: "K122", trainer: "巫偉傑", draw: "5", jockey: "周俊樂（-2）", weight: 131, rating: 81 },
+          { no: "6", name: "觀眾之力", code: "K107", trainer: "方嘉柏", draw: "1", jockey: "巴度", weight: 131, rating: 81 },
+          { no: "7", name: "友瑩亮", code: "K400", trainer: "伍鵬志", draw: "2", jockey: "梁家俊", weight: 129, rating: 79 },
+          { no: "8", name: "綫路英雄", code: "J428", trainer: "沈集成", draw: "13", jockey: "潘頓", weight: 126, rating: 76 },
+          { no: "9", name: "包裝明將", code: "L013", trainer: "姚本輝", draw: "7", jockey: "袁幸堯（-7）", weight: 122, rating: 72 },
+          { no: "10", name: "肯佩斯", code: "J265", trainer: "賀賢", draw: "4", jockey: "艾兆禮", weight: 120, rating: 70 },
+          { no: "11", name: "閃電小子", code: "L126", trainer: "文家良", draw: "10", jockey: "奧璇璧", weight: 119, rating: 69 },
+          { no: "12", name: "炎龍", code: "L563", trainer: "告東尼", draw: "8", jockey: "田泰安", weight: 116, rating: 66 },
+          { no: "13", name: "開心鑽寶", code: "L356", trainer: "呂健威", draw: "12", jockey: "金誠剛", weight: 116, rating: 66 },
+          { no: "14", name: "騰昇瀧駒", code: "L340", trainer: "桂福特", draw: "6", jockey: "楊明綸", weight: 115, rating: 62 },
+          { no: "R1", name: "競駿皇者", code: "K011", trainer: "游達榮", draw: "—", jockey: "—", weight: 118, rating: 68, reserve: true },
+          { no: "R2", name: "加利斯", code: "L564", trainer: "韋達", draw: "—", jockey: "—", weight: 133, rating: 83, reserve: true }
+        ];
+        (function () {
+          var body = document.getElementById("field-body");
+          if (!body) return;
+          FIELD.forEach(function (h) {
+            var tr = document.createElement("tr");
+            tr.style.borderBottom = "1px solid var(--border)";
+            if (h.self) tr.style.background = "var(--accent-soft)";
+            function td(text, opts) {
+              opts = opts || {};
+              var c = document.createElement("td");
+              c.style.cssText = "padding:8px 4px;vertical-align:top" + (opts.align ? ";text-align:" + opts.align : "") + (opts.weight ? ";font-weight:" + opts.weight : "") + (opts.color ? ";color:" + opts.color : "");
+              if (opts.num) c.className = "tnum";
+              c.textContent = text;
+              return c;
+            }
+            tr.appendChild(td(h.no, { num: true, weight: h.self ? "900" : "700", color: h.self ? "" : "var(--dim)" }));
+            var nameTd = document.createElement("td");
+            nameTd.style.cssText = "padding:8px 4px;vertical-align:top";
+            var nm = el("span", null, (h.reserve ? "後備 " : "") + h.name);
+            nm.style.fontWeight = h.self ? "700" : "600";
+            var cd = el("span", null, h.code);
+            cd.style.cssText = "display:block;font-size:11px;line-height:1.3;color:var(--dim)";
+            nameTd.appendChild(nm); nameTd.appendChild(cd);
+            tr.appendChild(nameTd);
+            tr.appendChild(td(h.trainer, {}));
+            tr.appendChild(td(h.draw, { num: true, align: "center", weight: h.self ? "600" : "" }));
+            tr.appendChild(td(h.jockey, {}));
+            tr.appendChild(td(String(h.weight), { num: true, align: "center", weight: h.self ? "600" : "" }));
+            tr.appendChild(td(String(h.rating), { num: true, align: "right", weight: h.self ? "600" : "" }));
+            body.appendChild(tr);
+          });
+        })();
+
+        /* ---------- Chance scores ---------- */
+        var SCORES = [
+          { no: "7號", name: "友瑩亮", score: 88, top: true },
+          { no: "1號", name: "極上紗瓏", score: 86 },
+          { no: "9號", name: "包裝明將", score: 82 },
+          { no: "6號", name: "觀眾之力", score: 78 },
+          { no: "8號", name: "綫路英雄", score: 74 },
+          { no: "3號", name: "天道鐵驥", score: 68, self: true, tag: "未知數，存疑" },
+          { no: "4號", name: "安都", score: 64 },
+          { no: "10號", name: "肯佩斯", score: 58 },
+          { no: "2號", name: "喜尊龍", score: 55 },
+          { no: "後備 R2", name: "加利斯", score: 45, tag: "未知數，存疑" },
+          { no: "11號", name: "閃電小子", score: 45 },
+          { no: "後備 R1", name: "競駿皇者", score: 42 },
+          { no: "12號", name: "炎龍", score: 40, tag: "未知數，存疑" },
+          { no: "13號", name: "開心鑽寶", score: 40, tag: "未知數，存疑" },
+          { no: "5號", name: "會當凌", score: 38 },
+          { no: "14號", name: "騰昇瀧駒", score: 30 }
+        ];
+        (function () {
+          var list = document.getElementById("score-list");
+          if (!list) return;
+          SCORES.forEach(function (h) {
+            var li = document.createElement("li");
+            li.style.cssText = "display:flex;align-items:center;gap:10px;margin-bottom:8px";
+            var label = document.createElement("span");
+            label.className = "tnum";
+            label.style.cssText = "width:56px;flex-shrink:0;font-size:14px";
+            var noSpan = el("span", null, h.no);
+            noSpan.style.cssText = "display:block;color:var(--dim);font-size:12px";
+            var nameSpan = el("span", null, h.name);
+            nameSpan.style.cssText = "display:block;white-space:nowrap;font-weight:700" + (h.self ? ";color:var(--accent)" : "");
+            label.appendChild(noSpan); label.appendChild(nameSpan);
+            var track = document.createElement("span");
+            track.style.cssText = "height:14px;flex:1;overflow:hidden;background:var(--surface-2);border-radius:999px";
+            track.setAttribute("role", "img");
+            track.setAttribute("aria-label", h.name + " 機會評分 " + h.score + " 分" + (h.tag ? "（" + h.tag + "）" : ""));
+            var bar = document.createElement("span");
+            bar.style.cssText = "display:block;height:100%;border-radius:999px;width:" + h.score + "%;background:" + (h.self ? "var(--accent)" : h.top ? "var(--chestnut)" : "var(--dim)") + ";opacity:" + (h.self || h.top ? "1" : "0.55");
+            track.appendChild(bar);
+            var val = document.createElement("span");
+            val.className = "tnum";
+            val.style.cssText = "width:64px;flex-shrink:0;text-align:right;font-size:14px;font-weight:900";
+            val.appendChild(document.createTextNode(String(h.score)));
+            var unit = el("span", null, " 分");
+            unit.style.cssText = "font-size:12px;font-weight:600;color:var(--dim)";
+            val.appendChild(unit);
+            if (h.tag) {
+              var tg = el("span", null, h.tag);
+              tg.style.cssText = "display:block;font-size:11px;line-height:1.3;font-weight:600;color:var(--chestnut)";
+              val.appendChild(tg);
+            }
+            li.appendChild(label); li.appendChild(track); li.appendChild(val);
+            list.appendChild(li);
+          });
+        })();
+
+        /* ---------- Estimated running positions ---------- */
+        var POS_STAGES = ["出閘 · 首400米", "中段 · 800米", "直路入口", "終點 · 估計名次"];
+        var POS_ORDER = [
+          [1, 9, 7, 10, 4, 2, 12, 13, 14, 11, 8, 3, 6, 5],
+          [1, 9, 7, 10, 4, 2, 12, 13, 11, 14, 3, 8, 6, 5],
+          [1, 9, 7, 10, 4, 3, 8, 6, 2, 12, 11, 13, 14, 5],
+          [7, 1, 3, 9, 6, 8, 4, 10, 2, 12, 11, 13, 14, 5]
+        ];
+        var POS_NAMES = { 1: "極上紗瓏", 2: "喜尊龍", 3: "天道鐵驥", 4: "安都", 5: "會當凌", 6: "觀眾之力", 7: "友瑩亮", 8: "綫路英雄", 9: "包裝明將", 10: "肯佩斯", 11: "閃電小子", 12: "炎龍", 13: "開心鑽寶", 14: "騰昇瀧駒" };
+        var POS_NOTES = [
+          { no: 7, name: "友瑩亮", pos: [3, 3, 3, 1], note: "跟前守住第3，直路發力趕過極上紗瓏 — 冠軍最可能嗰匹。" },
+          { no: 1, name: "極上紗瓏", pos: [1, 1, 1, 2], note: "出閘放頭一路領先，直路入口仍守第1，末段被友瑩亮趕過得第2；頂磅係阻力。" },
+          { no: 3, name: "天道鐵驥", pos: [12, 11, 6, 3], note: "9檔留後，直路入口由第11追到第6，末段衝上第3；要贏，就要前面鬥燒，加埋自己起步乾淨、直路望到空。", self: true },
+          { no: 9, name: "包裝明將", pos: [2, 2, 2, 4], note: "同極上紗瓏爭放守住第2，一路跟到直路入口，末段力弱跌到第4。" },
+          { no: 6, name: "觀眾之力", pos: [13, 13, 8, 5], note: "1檔留後，直路入口追到第8，末段再上到第5；沙田1400米未證明，後上追勢啱但未入三甲。" }
+        ];
+        (function () {
+          var chart = document.getElementById("position-chart");
+          if (!chart) return;
+          POS_STAGES.forEach(function (stage, si) {
+            var col = document.createElement("div");
+            var head = el("p", null, stage);
+            head.style.cssText = "margin:0 0 6px;text-align:center;font-size:11px;line-height:1.3;font-weight:700;color:var(--dim)";
+            col.appendChild(head);
+            var ol = document.createElement("ol");
+            ol.setAttribute("aria-label", stage + "走位");
+            POS_ORDER[si].forEach(function (no, idx) {
+              var isSelf = no === 3, isFirst = idx === 0;
+              var li = document.createElement("li");
+              li.style.cssText = "display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;" +
+                (isSelf ? "border:1.5px solid var(--accent);background:var(--accent);color:#fff"
+                  : isFirst ? "border:1.5px solid var(--chestnut);background:var(--alert-soft);color:var(--text)"
+                  : "border:1px solid var(--border);background:var(--surface-2);color:var(--text)");
+              li.setAttribute("aria-label", "第" + (idx + 1) + "位，" + no + "號" + POS_NAMES[no]);
+              var rank = el("span", "tnum", String(idx + 1));
+              rank.style.cssText = "font-size:9px;font-weight:600;opacity:.8";
+              var horse = el("span", null, "🐴");
+              horse.setAttribute("aria-hidden", "true");
+              horse.style.cssText = "font-size:12px;line-height:1";
+              var num = el("span", "tnum", String(no));
+              var nm = el("span", "pos-name", POS_NAMES[no]);
+              nm.style.cssText = "white-space:nowrap";
+              li.appendChild(rank); li.appendChild(horse); li.appendChild(num); li.appendChild(nm);
+              ol.appendChild(li);
+            });
+            col.appendChild(ol);
+            chart.appendChild(col);
+          });
+          var notes = document.getElementById("position-notes");
+          POS_NOTES.forEach(function (h) {
+            var li = document.createElement("li");
+            li.style.cssText = "font-size:14px;line-height:1.7;margin-bottom:6px";
+            var head = el("span", null, "🐴 " + h.no + "號 " + h.name + "：");
+            head.style.cssText = "font-weight:700" + (h.self ? ";color:var(--accent)" : "");
+            var traj = el("span", "tnum", " 第" + h.pos[0] + " → 第" + h.pos[1] + " → 第" + h.pos[2] + " → 第" + h.pos[3]);
+            traj.style.fontWeight = "600";
+            var nt = el("span", null, " — " + h.note);
+            nt.style.color = "var(--dim)";
+            li.appendChild(head); li.appendChild(traj); li.appendChild(nt);
+            notes.appendChild(li);
+          });
+        })();
+
+        /* ---------- Opponents ---------- */
+        var THREAT_COLORS = { "主要威脅": "var(--alert)", "磅位威脅": "var(--chestnut)", "三甲攪局": "var(--accent)", "機會較低": "var(--dim)", "未知數": "var(--dim)" };
+        var MAIN_OPPONENTS = [
+          { no: 7, name: "友瑩亮", code: "K400", trainer: "伍鵬志", draw: 2, jockey: "梁家俊", weight: 129, rating: 79, threat: "主要威脅",
+            form: "25/10 同程同班亞軍（頸位負包裝明將，135 磅，走位 2-3-4-2）；01/10 同程同班冠軍（頭位，122 磅）；13/09 同程同班亞軍（1-1/4 馬位）。近三仗同程三班 2-1-2，全部接近。",
+            analysis: "全場最有根據嘅同程馬，跑法跟前，2 檔有利。磅位較 25/10 大幅有利 — 嗰仗佢孭 135 磅輸頸位，今仗只孭 129 磅，而贏佢嘅包裝明將由 117 磅加到 122 磅。評分升 2 分至 79，狀態正盛。最大威脅。" },
+          { no: 1, name: "極上紗瓏", code: "K585", trainer: "羅富全", draw: 3, jockey: "潘明輝", weight: 135, rating: 85, threat: "主要威脅",
+            form: "在港 6 戰 4 勝；1400 米三捷（29/03、22/02 三班，27/12 四班，三仗全程領放，走位 1-1-1-1）；上仗 27/09 二班 1200 米第 3 名（負 1-1/2 馬位，124 磅，首次綁繫舌帶）。",
+            analysis: "放頭馬，1400 米係佢贏馬路程，3 檔有利領放，潘明輝包辦四捷。阻力係頂磅 135 磅（上仗二班只孭 124 磅），同埋今仗有包裝明將一齊爭放，未必放到咁舒服。如果放到慢步速，佢可以一放到底。另外注意：馬會傷患紀錄顯示佢 19/10 賽前檢查發現心律不正常而退出賽事，10/11 已通過獸醫檢查（The Standard 19/11 亦提及佢其後試閘表現唔錯）；健康已獲放行，但一個月前嘅心律問題係要留意嘅背景。" },
+          { no: 9, name: "包裝明將", code: "L013", trainer: "姚本輝", draw: 7, jockey: "袁幸堯（-7）", weight: 122, rating: 72, threat: "主要威脅",
+            form: "上仗 25/10 同程同班冠軍（頸位贏友瑩亮，117 磅，13 檔放頭，走位 3-1-1-1）；04/10 三班 1200 米第 5 名；21/06 四班 1200 米冠軍。",
+            analysis: "25/10 同一場贏過友瑩亮同綫路英雄，今仗袁幸堯減 7 磅再騎，實際負磅只係 122 磅，7 檔比上仗 13 檔好。阻力係負磅加 5 磅、評分升 6 分，同埋要再同極上紗瓏爭放。放頭威脅。" },
+          { no: 6, name: "觀眾之力", code: "K107", trainer: "方嘉柏", draw: 1, jockey: "巴度", weight: 131, rating: 81, threat: "磅位威脅",
+            form: "上仗 04/11 跑馬地 1200 米三班冠軍（11 檔，134 磅，巴度，後上 8-8-1 贏半馬位）；07/10 跑馬地 1200 米亞軍（頸位）；10/06 跑馬地 1200 米冠軍。評分升 6 分至 81。",
+            analysis: "近況係全場最火熱之一，三仗跑馬地 1-2-1。但三場都係跑馬地 1200 米；沙田 1400 米只跑過兩次第 5 名（31/05 負 2 馬位、13/07/25 負 3 馬位），未證明。1 檔留後跑法，要睇步速夠唔夠快。" },
+          { no: 8, name: "綫路英雄", code: "J428", trainer: "沈集成", draw: 13, jockey: "潘頓", weight: 126, rating: 76, threat: "三甲攪局",
+            form: "上仗 25/10 同程同班季軍（1-1/4 馬位，134 磅，14 檔，走位 6-5-7-3）；27/09 同程同班亞軍（短馬頭位，129 磅，潘頓）；06/09 同程第 5 名。近五仗 1400 米三班全部入前五。",
+            analysis: "同程最穩健嘅馬之一，潘頓主轡，今仗負磅減 8 磅至 126 磅。最大阻力係 13 檔，轉彎要蝕位，贏面低過入三甲機會。" },
+          { no: 4, name: "安都", code: "K033", trainer: "蔡約翰", draw: 11, jockey: "麥文堅", weight: 132, rating: 82, threat: "三甲攪局",
+            form: "上仗 08/11 二班 1400 米第 5 名（負 2-3/4 馬位，116 磅，留後 9-8-8-5）；19/10 三班 1400 米第 9 名（4-1/2 馬位）；強項係 1600 米（13/06 三班 1600 米冠軍、31/05 亞軍）。",
+            analysis: "班次夠、評分夠，但 1400 米短過佢最佳路程，近兩仗 1400 米表現一般，11 檔亦唔理想。麥文堅客串執韁係變數，計三甲唔計贏。" }
+        ];
+        var QUICK_OPPONENTS = [
+          { no: "2", name: "喜尊龍", threat: "機會較低", text: "評分 85 同場最高，但 14 檔最外、頂磅 135 磅，近績 3/7/9/7/2/5 唔穩定，首次戴羊毛面箍係未知數。" },
+          { no: "5", name: "會當凌", threat: "機會較低", text: "近績 13/12/7/9/10/14，六仗全敗，評分跌 2 分，狀態未見起色。" },
+          { no: "10", name: "肯佩斯", threat: "三甲攪局", text: "近兩仗連勝（班次未核實），評分升 6 分至 70，120 磅輕磅、4 檔，今仗升班考驗，唔可以完全睇小。" },
+          { no: "11", name: "閃電小子", threat: "機會較低", text: "近績 6/9/6/1/2/12，上仗第 12 名，狀態回落。" },
+          { no: "12", name: "炎龍", threat: "未知數", text: "在港未出賽，無近績可考，首次綁繫舌帶，告東尼馬房初出馬，實力未核實。" },
+          { no: "13", name: "開心鑽寶", threat: "未知數", text: "在港未出賽，無近績可考，首次交叉鼻箍，呂健威馬房初出馬，實力未核實。" },
+          { no: "14", name: "騰昇瀧駒", threat: "機會較低", text: "在港僅兩仗，第 11 名同第 10 名，評分跌 2 分至 62，全場最低。" },
+          { no: "後備 R1", name: "競駿皇者", threat: "機會較低", text: "近績 8/11/4/3/6/5，118 磅，游達榮馬房；即使補上，近況亦唔突出。" },
+          { no: "後備 R2", name: "加利斯", threat: "未知數", text: "在港僅兩仗（12/3），133 磅，評分 83，韋達馬房；樣本太少，未核實。" }
+        ];
+        (function () {
+          var list = document.getElementById("opponent-list");
+          if (list) MAIN_OPPONENTS.forEach(function (o) {
+            var color = THREAT_COLORS[o.threat] || "var(--dim)";
+            var li = document.createElement("li");
+            li.style.cssText = "padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)";
+            var top = document.createElement("div");
+            top.style.cssText = "display:flex;align-items:flex-start;justify-content:space-between;gap:12px";
+            var title = el("p", null, "");
+            title.style.cssText = "font-size:16px;font-weight:700";
+            var noSpan = el("span", "tnum", o.no + " ");
+            noSpan.style.color = "var(--dim)";
+            title.appendChild(noSpan);
+            title.appendChild(document.createTextNode(o.name));
+            var meta = el("span", null, " " + o.code + " · " + o.trainer);
+            meta.style.cssText = "margin-left:8px;font-size:14px;font-weight:400;color:var(--dim)";
+            title.appendChild(meta);
+            var badge = el("span", null, o.threat);
+            badge.style.cssText = "flex-shrink:0;padding:2px 8px;font-size:12px;font-weight:700;border-radius:999px;color:" + color + ";border:1.5px solid " + color;
+            top.appendChild(title); top.appendChild(badge);
+            var line = el("p", "tnum", o.draw + "檔 · " + o.jockey + " · 負 " + o.weight + " 磅 · 評分 " + o.rating);
+            line.style.cssText = "margin-top:4px;font-size:14px;color:var(--dim)";
+            var form = el("p", null, "");
+            form.style.cssText = "margin-top:8px;font-size:14px;line-height:1.7";
+            var fb = el("span", null, "近績：");
+            fb.style.fontWeight = "600";
+            form.appendChild(fb);
+            form.appendChild(document.createTextNode(o.form));
+            var ana = el("p", null, o.analysis);
+            ana.style.cssText = "margin-top:6px;font-size:14px;line-height:1.7;color:var(--dim)";
+            li.appendChild(top); li.appendChild(line); li.appendChild(form); li.appendChild(ana);
+            list.appendChild(li);
+          });
+          var quick = document.getElementById("quick-list");
+          if (quick) QUICK_OPPONENTS.forEach(function (o) {
+            var p = document.createElement("p");
+            p.style.cssText = "font-size:14px;line-height:1.7";
+            var head = el("span", null, "");
+            head.style.fontWeight = "600";
+            var noSpan = el("span", "tnum", o.no + " ");
+            noSpan.style.color = "var(--dim)";
+            head.appendChild(noSpan);
+            head.appendChild(document.createTextNode(o.name));
+            var tg = el("span", null, o.threat);
+            tg.style.cssText = "margin-left:6px;font-size:12px;font-weight:700;color:" + (THREAT_COLORS[o.threat] || "var(--dim)");
+            head.appendChild(tg);
+            var rest = el("span", null, " — " + o.text);
+            rest.style.color = "var(--dim)";
+            p.appendChild(head); p.appendChild(rest);
+            quick.appendChild(p);
+          });
+        })();
+      })();
+      </script>
+
 
       <!-- Fast work -->
       <div class="section-title" id="sec-fastwork">
