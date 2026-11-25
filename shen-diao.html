@@ -610,7 +610,7 @@
       <ul>
         <li style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)">
           <span class="tnum" style="flex-shrink:0;font-size:14px;font-weight:600">11月25日</span>
-          <div style="font-size:14px;line-height:1.7"><span style="font-weight:600;color:var(--chestnut)">持平</span> — 快踱一圈，硬功五日；25/11 沙田外圈快踱一圈，操練連續無斷日；24/11 游水紀錄已補上載，25/11 游水紀錄要下一個工作日下午先上載，唔當斷操。今日無新快操，上次快操仍係 20/11 全天候三段 1:23.3（31.0+28.3+24.0），相隔 5 日。評分維持 75（08/11 賽後評分調整仍未公佈）；贏馬體重沿用 1128 磅。獸醫紀錄無新增傷患（最近仍為 27/03/2026 左前腿不良於行，已於 08/04/2026 通過）；試閘無新增（最近 19/09/2026）。報名方面：29/11 沙田報名表 24/11 已核實無神鵰，02/12 報名表尚未公佈（25/11 14:26 核實）；25/11 跑馬地今晚唔出賽（唔係正選亦唔係後備），下一場仍未定。08/11 第 10 場賽果及賽後評估維持不變。判斷持平：操練連續、評分及健康無變化，29/11 無報名係部署結果，唔係狀態回落。</div>
+          <div style="font-size:14px;line-height:1.7"><span style="font-weight:600;color:var(--chestnut)">持平</span> — 快踱一圈，硬功五日；25/11 沙田外圈快踱一圈，操練連續無斷日；24/11 游水紀錄已補上載，25/11 游水紀錄要下一個工作日下午先上載，唔當斷操。今日無新快操，上次快操仍係 20/11 全天候三段 1:23.3（31.0+28.3+24.0），相隔 5 日。評分維持 75（08/11 賽後評分調整仍未公佈）；贏馬體重沿用 1128 磅。獸醫紀錄無新增傷患（最近仍為 27/03/2026 左前腿不良於行，已於 08/04/2026 通過）；試閘無新增（最近 19/09/2026）。報名方面：29/11 沙田報名表 24/11 已核實無神鵰，02/12 報名表尚未公佈（25/11 14:26 核實）；25/11 跑馬地今晚唔出賽（唔係正選亦唔係後備），下一場仍未定。08/11 第 10 場賽果及賽後評估維持不變。判斷持平：操練連續、評分及健康無變化，29/11 無報名係部署結果，唔係狀態回落。補記：24/11 原排沙田全天候 1050 米第 4 組試閘（5 檔），已退出，無實際試閘；係 19/09 以來首次排試閘，馬會無交代退出原因；最近一課已完成試閘仍係 19/09/2026。</div>
         </li>
         <li style="display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)">
           <span class="tnum" style="flex-shrink:0;font-size:14px;font-weight:600">11月24日</span>
@@ -1032,6 +1032,8 @@
 
       /* ---------- Trials ---------- */
       var TRIALS = [
+        { date: "11月24日", venue: "沙田 全天候 1050米 · 第4組", placing: "退出", withdrawn: true,
+          note: "已退出，無實際試閘；19/09 以來首次排試閘；馬會無交代退出原因" },
         { date: "9月19日", venue: "跑馬地 草地 1000米 · 第8組", time: "0:58.45", winner: "0:57.66", placing: "3", jockey: "艾兆禮", trainer: "甘敏斯", pos: "5-5-3", margin: "輸 星球勇士 5 馬位",
           comment: "早段文靜，按住第三", note: "4 課入面最有睇頭：早段仍然按住，末段自己湧上第3。之後 15 日跑 04/10 熱身，30 日後贏 19/10。贏馬後至今無再試閘。",
           video: "https://racing.hkjc.com/contentAsset/videoplayer_v4/video-player-iframe_v4.html?type=brts&date=20260919&rc=hv&no=08&lang=chi&rf=http://racing.hkjc.com/zh-hk/local/information/archive/btresult?Date=2026/09/19&pageid=racing/local&jumpTime=52" },
@@ -1054,29 +1056,36 @@
           row.style.cssText = "display:flex;align-items:flex-start;gap:12px";
           var badge = document.createElement("div");
           badge.className = "font-display";
-          badge.style.cssText = "flex-shrink:0;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;border-radius:50%;border:2px solid var(--border);color:var(--dim)";
+          badge.style.cssText = "flex-shrink:0;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:" + (t.withdrawn ? "13px" : "18px") + ";font-weight:900;border-radius:50%;border:2px solid var(--border);color:var(--dim)";
           badge.textContent = t.placing;
-          badge.setAttribute("aria-label", "試閘名次 " + t.placing);
+          badge.setAttribute("aria-label", t.withdrawn ? "試閘退出" : "試閘名次 " + t.placing);
           var main = document.createElement("div");
           main.style.cssText = "min-width:0;flex:1";
           var p1 = el("p", null, t.date + " · " + t.venue);
           p1.style.cssText = "font-size:14px;font-weight:600";
-          var ts = el("span", "tnum", " · " + t.time + "（頭馬 " + t.winner + "）");
-          ts.style.color = "var(--dim)";
-          p1.appendChild(ts);
-          var p2 = el("p", null, t.jockey + " · " + t.trainer + "馬房 · 走位 " + t.pos + " · " + t.margin);
-          p2.style.cssText = "margin-top:2px;font-size:14px;color:var(--dim)";
-          var pc = el("p", null, "「" + t.comment + "」");
-          pc.style.cssText = "margin-top:4px;font-size:14px;font-weight:600;color:var(--accent)";
+          main.appendChild(p1);
+          if (t.time) {
+            var ts = el("span", "tnum", " · " + t.time + "（頭馬 " + t.winner + "）");
+            ts.style.color = "var(--dim)";
+            p1.appendChild(ts);
+            var p2 = el("p", null, t.jockey + " · " + t.trainer + "馬房 · 走位 " + t.pos + " · " + t.margin);
+            p2.style.cssText = "margin-top:2px;font-size:14px;color:var(--dim)";
+            main.appendChild(p2);
+            var pc = el("p", null, "「" + t.comment + "」");
+            pc.style.cssText = "margin-top:4px;font-size:14px;font-weight:600;color:var(--accent)";
+            main.appendChild(pc);
+          }
           var pn = el("p", null, t.note);
           pn.style.cssText = "margin-top:2px;font-size:14px;line-height:1.65;color:var(--dim)";
-          main.appendChild(p1); main.appendChild(p2); main.appendChild(pc); main.appendChild(pn);
-          var a = document.createElement("a");
-          a.href = t.video; a.target = "_blank"; a.rel = "noreferrer";
-          a.textContent = "▶ 試閘片段（馬會官方） ↗";
-          a.setAttribute("aria-label", "試閘片段（新視窗開啟）");
-          a.style.cssText = "margin-top:8px;display:inline-block;padding:6px 12px;font-size:12px;font-weight:600;border:1px solid var(--border);border-radius:999px;background:var(--surface);color:var(--accent);text-decoration:none";
-          main.appendChild(a);
+          main.appendChild(pn);
+          if (t.video) {
+            var a = document.createElement("a");
+            a.href = t.video; a.target = "_blank"; a.rel = "noreferrer";
+            a.textContent = "▶ 試閘片段（馬會官方） ↗";
+            a.setAttribute("aria-label", "試閘片段（新視窗開啟）");
+            a.style.cssText = "margin-top:8px;display:inline-block;padding:6px 12px;font-size:12px;font-weight:600;border:1px solid var(--border);border-radius:999px;background:var(--surface);color:var(--accent);text-decoration:none";
+            main.appendChild(a);
+          }
           row.appendChild(badge); row.appendChild(main);
           li.appendChild(row);
           list.appendChild(li);
