@@ -683,21 +683,21 @@
         <figure style="margin-top:20px;border-top:1px solid var(--border);padding-top:16px" aria-label="估計走位圖">
           <p style="font-size:16px;font-weight:700;color:var(--chestnut)">估計走位圖</p>
           <p style="margin-top:4px;font-size:12px;line-height:1.65;color:var(--dim)">賽前估計，唔係賽果。主情境：步速誠實偏快。左至右四個階段，每欄由上至下係當時走位（最上＝領先）。圖標係馬頭標記，數字係馬號；綠色係駿美一生。</p>
-          <div style="margin-top:12px;display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
-            <div>
+          <div style="margin-top:12px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px">
+            <div style="min-width:0">
               <p style="margin:0 0 6px;text-align:center;font-size:11px;line-height:1.3;font-weight:700;color:var(--dim)">出閘 · 首400米</p>
-              <div style="margin-bottom:6px">
+              <div style="margin-bottom:6px;min-width:0">
                 <p style="margin:0 0 4px;text-align:center;font-size:10px;font-weight:600;color:var(--dim)">前領組</p>
-                <ol aria-label="出閘 · 首400米前領組">
+                <ol style="margin:0;padding:0;list-style:none;min-width:0" aria-label="出閘 · 首400米前領組">
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="前領組，1號馬上盈（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">1</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="前領組，3號君達得（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">3</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="前領組，8號添喜運（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">8</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="前領組，11號萬事勝利（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">11</span></li>
                 </ol>
               </div>
-              <div style="margin-bottom:6px">
+              <div style="margin-bottom:6px;min-width:0">
                 <p style="margin:0 0 4px;text-align:center;font-size:10px;font-weight:600;color:var(--dim)">中游組</p>
-                <ol aria-label="出閘 · 首400米中游組">
+                <ol style="margin:0;padding:0;list-style:none;min-width:0" aria-label="出閘 · 首400米中游組">
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="中游組，4號星光快驅（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">4</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="中游組，5號豐功偉績（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">5</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="中游組，6號猶有心得（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">6</span></li>
@@ -706,9 +706,9 @@
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="中游組，13號至高心得（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">13</span></li>
                 </ol>
               </div>
-              <div style="margin-bottom:6px">
+              <div style="margin-bottom:6px;min-width:0">
                 <p style="margin:0 0 4px;text-align:center;font-size:10px;font-weight:600;color:var(--dim)">留後組</p>
-                <ol aria-label="出閘 · 首400米留後組">
+                <ol style="margin:0;padding:0;list-style:none;min-width:0" aria-label="出閘 · 首400米留後組">
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="留後組，2號文武全能（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">2</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1.5px solid var(--accent);background:var(--accent);color:#fff" aria-label="第12位，9號駿美一生"><span class="tnum" style="font-size:9px;font-weight:600;opacity:.8">12</span><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">9</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="留後組，12號東方魅影（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">12</span></li>
@@ -716,20 +716,20 @@
                 </ol>
               </div>
             </div>
-            <div>
+            <div style="min-width:0">
               <p style="margin:0 0 6px;text-align:center;font-size:11px;line-height:1.3;font-weight:700;color:var(--dim)">中段 · 800米</p>
-              <div style="margin-bottom:6px">
+              <div style="margin-bottom:6px;min-width:0">
                 <p style="margin:0 0 4px;text-align:center;font-size:10px;font-weight:600;color:var(--dim)">前領組</p>
-                <ol aria-label="中段 · 800米前領組">
+                <ol style="margin:0;padding:0;list-style:none;min-width:0" aria-label="中段 · 800米前領組">
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="前領組，1號馬上盈（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">1</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="前領組，3號君達得（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">3</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="前領組，8號添喜運（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">8</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="前領組，11號萬事勝利（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">11</span></li>
                 </ol>
               </div>
-              <div style="margin-bottom:6px">
+              <div style="margin-bottom:6px;min-width:0">
                 <p style="margin:0 0 4px;text-align:center;font-size:10px;font-weight:600;color:var(--dim)">中游組</p>
-                <ol aria-label="中段 · 800米中游組">
+                <ol style="margin:0;padding:0;list-style:none;min-width:0" aria-label="中段 · 800米中游組">
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="中游組，4號星光快驅（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">4</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="中游組，5號豐功偉績（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">5</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="中游組，6號猶有心得（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">6</span></li>
@@ -738,9 +738,9 @@
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="中游組，13號至高心得（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">13</span></li>
                 </ol>
               </div>
-              <div style="margin-bottom:6px">
+              <div style="margin-bottom:6px;min-width:0">
                 <p style="margin:0 0 4px;text-align:center;font-size:10px;font-weight:600;color:var(--dim)">留後組</p>
-                <ol aria-label="中段 · 800米留後組">
+                <ol style="margin:0;padding:0;list-style:none;min-width:0" aria-label="中段 · 800米留後組">
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="留後組，2號文武全能（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">2</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1.5px solid var(--accent);background:var(--accent);color:#fff" aria-label="第12位，9號駿美一生"><span class="tnum" style="font-size:9px;font-weight:600;opacity:.8">12</span><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">9</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="留後組，12號東方魅影（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">12</span></li>
@@ -748,20 +748,20 @@
                 </ol>
               </div>
             </div>
-            <div>
+            <div style="min-width:0">
               <p style="margin:0 0 6px;text-align:center;font-size:11px;line-height:1.3;font-weight:700;color:var(--dim)">直路入口</p>
-              <div style="margin-bottom:6px">
+              <div style="margin-bottom:6px;min-width:0">
                 <p style="margin:0 0 4px;text-align:center;font-size:10px;font-weight:600;color:var(--dim)">前領組</p>
-                <ol aria-label="直路入口前領組">
+                <ol style="margin:0;padding:0;list-style:none;min-width:0" aria-label="直路入口前領組">
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="前領組，1號馬上盈（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">1</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="前領組，3號君達得（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">3</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="前領組，8號添喜運（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">8</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="前領組，11號萬事勝利（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">11</span></li>
                 </ol>
               </div>
-              <div style="margin-bottom:6px">
+              <div style="margin-bottom:6px;min-width:0">
                 <p style="margin:0 0 4px;text-align:center;font-size:10px;font-weight:600;color:var(--dim)">中游組</p>
-                <ol aria-label="直路入口中游組">
+                <ol style="margin:0;padding:0;list-style:none;min-width:0" aria-label="直路入口中游組">
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="中游組，4號星光快驅（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">4</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="中游組，5號豐功偉績（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">5</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="中游組，6號猶有心得（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">6</span></li>
@@ -770,9 +770,9 @@
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="中游組，13號至高心得（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">13</span></li>
                 </ol>
               </div>
-              <div style="margin-bottom:6px">
+              <div style="margin-bottom:6px;min-width:0">
                 <p style="margin:0 0 4px;text-align:center;font-size:10px;font-weight:600;color:var(--dim)">留後組</p>
-                <ol aria-label="直路入口留後組">
+                <ol style="margin:0;padding:0;list-style:none;min-width:0" aria-label="直路入口留後組">
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="留後組，2號文武全能（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">2</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1.5px solid var(--accent);background:var(--accent);color:#fff" aria-label="第8位，9號駿美一生"><span class="tnum" style="font-size:9px;font-weight:600;opacity:.8">8</span><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">9</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="留後組，12號東方魅影（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">12</span></li>
@@ -780,20 +780,20 @@
                 </ol>
               </div>
             </div>
-            <div>
+            <div style="min-width:0">
               <p style="margin:0 0 6px;text-align:center;font-size:11px;line-height:1.3;font-weight:700;color:var(--dim)">終點 · 估計名次</p>
-              <div style="margin-bottom:6px">
+              <div style="margin-bottom:6px;min-width:0">
                 <p style="margin:0 0 4px;text-align:center;font-size:10px;font-weight:600;color:var(--dim)">前領組</p>
-                <ol aria-label="終點 · 估計名次前領組">
+                <ol style="margin:0;padding:0;list-style:none;min-width:0" aria-label="終點 · 估計名次前領組">
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="前領組，1號馬上盈（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">1</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="前領組，3號君達得（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">3</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="前領組，8號添喜運（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">8</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="前領組，11號萬事勝利（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">11</span></li>
                 </ol>
               </div>
-              <div style="margin-bottom:6px">
+              <div style="margin-bottom:6px;min-width:0">
                 <p style="margin:0 0 4px;text-align:center;font-size:10px;font-weight:600;color:var(--dim)">中游組</p>
-                <ol aria-label="終點 · 估計名次中游組">
+                <ol style="margin:0;padding:0;list-style:none;min-width:0" aria-label="終點 · 估計名次中游組">
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="中游組，4號星光快驅（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">4</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="中游組，5號豐功偉績（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">5</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="中游組，6號猶有心得（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">6</span></li>
@@ -802,9 +802,9 @@
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="中游組，13號至高心得（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">13</span></li>
                 </ol>
               </div>
-              <div style="margin-bottom:6px">
+              <div style="margin-bottom:6px;min-width:0">
                 <p style="margin:0 0 4px;text-align:center;font-size:10px;font-weight:600;color:var(--dim)">留後組</p>
-                <ol aria-label="終點 · 估計名次留後組">
+                <ol style="margin:0;padding:0;list-style:none;min-width:0" aria-label="終點 · 估計名次留後組">
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="留後組，2號文武全能（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">2</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1.5px solid var(--accent);background:var(--accent);color:#fff" aria-label="第6位，9號駿美一生"><span class="tnum" style="font-size:9px;font-weight:600;opacity:.8">6</span><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">9</span></li>
                   <li style="display:flex;align-items:center;justify-content:center;gap:3px;padding:5px 2px;margin-bottom:5px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)" aria-label="留後組，12號東方魅影（只按組別顯示，無估計名次）"><span aria-hidden="true" style="font-size:12px;line-height:1">🐴</span><span class="tnum">12</span></li>
@@ -823,7 +823,7 @@
 
       <!-- 主要對手分析 -->
       <h3 class="font-display" style="margin:24px 0 8px;font-size:18px;font-weight:700">🔍 主要對手分析</h3>
-      <ul style="display:flex;flex-direction:column;gap:12px">
+      <ul style="display:flex;flex-direction:column;gap:12px;margin:0;padding:0;list-style:none">
         <li style="padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)">
           <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px">
             <p style="font-size:16px;font-weight:700"><span class="tnum" style="color:var(--dim)">2 </span>文武全能<span style="margin-left:8px;font-size:14px;font-weight:400;color:var(--dim)">K402 · 伍鵬志</span></p>
